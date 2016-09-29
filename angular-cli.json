@@ -15,9 +15,13 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
+        "../node_modules/font-awesome/css/font-awesome.min.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
         "styles.sass"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/chance/dist/chance.min.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
@@ -25,8 +29,12 @@
       }
     }
   ],
-  "addons": [],
-  "packages": [],
+  "addons": [
+
+  ],
+  "packages": [
+
+  ],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"

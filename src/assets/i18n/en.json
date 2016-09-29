@@ -1,0 +1,44 @@
+{
+    "appTitle": "Just A Dev Blog",
+    "mainNav": {
+        "homePage": "Home",
+        "aboutPage": "About",
+        "forReadersPage": "For Readers",
+        "morePage": "More"
+    },
+    "subNav": {
+        "contactInfo": "Contact",
+        "skillsInfo": "Skill Set",
+        "careerInfo": "Career History",
+        "blogInfo": "Blogs",
+        "faqInfo": "FAQ",
+        "siteTemplateInfo": "Site Template",
+        "gitHubInfo": "GitHub",
+        "upcomingNewsInfo": "Upcoming News",
+        "meetUpInfo": "Meet-Ups"
+    },
+    "sidebar": {
+        "recommendedArticleTitle": "Recommended Articles",
+        "recentArticleTitle": "Recent Articles",
+        "categoriesTitle": "Categories"
+    },
+    "blogPreview":{
+        "viewCountLabel": "views",
+        "commentsLabel" : "comments",
+        "readMoreLabelUppercase" : "READ MORE",
+        "byAuthorLabel": "by {{author}}"
+    },
+    "footerContactInfo": {
+        "personalSlogan": "A developers blog."
+    },
+    "footerNavBar": {
+        "homePage": "Home",
+        "aboutPage": "About",
+        "blogPage": "Blog",
+        "contactPage": "Contact",
+        "copywriteLabel": "Copyright ©"
+    },
+    "createArticle": {
+        "creatorTitle": "Create Article"
+    }
+}

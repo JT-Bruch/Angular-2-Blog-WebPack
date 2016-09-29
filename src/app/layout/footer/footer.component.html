@@ -1,0 +1,68 @@
+<footer class="footer section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <div class="footer-logo" (click)="testMethod()">
+          <h1>{{'appTitle' | translate}}</h1>
+          <span>{{'footerContactInfo.personalSlogan' | translate}}</span>
+        </div>
+        <div class="contact-info">
+          <ul>
+            <li><i class="fa fa-envelope-o"></i> {{primaryEmailAddress}}</li>
+            <li><i class="fa fa-phone"></i> {{primaryTelephoneAddress}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-6">
+        <div class="footer-widget">
+          <div class="widget-title">
+            <h6>{{'mainNav.aboutPage' | translate }}</h6>
+          </div>
+          <ul>
+            <li><a routerLink="/about">{{'subNav.contactInfo' | translate }}</a></li>
+            <li><a routerLink="/about">{{'subNav.skillsInfo' | translate }}</a></li>
+            <li><a routerLink="/about">{{'subNav.careerInfo' | translate }}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-6">
+        <div class="footer-widget">
+          <div class="widget-title">
+            <h6>{{'mainNav.forReadersPage' | translate }}</h6>
+          </div>
+          <ul>
+            <li><a routerLink="/readers">{{'subNav.blogInfo' | translate }}</a></li>
+            <li><a routerLink="/readers">{{'subNav.faqInfo' | translate }}</a></li>
+            <li><a routerLink="/readers">{{'subNav.siteTemplateInfo' | translate }}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-6">
+        <div class="footer-widget">
+          <div class="widget-title">
+            <h6>{{'mainNav.morePage' | translate }}</h6>
+          </div>
+          <ul>
+            <li><a routerLink="/more">{{'subNav.gitHubInfo' | translate }}</a></li>
+            <li><a routerLink="/more">{{'subNav.upcomingNewsInfo' | translate }}</a></li>
+            <li><a routerLink="/more">{{'subNav.meetUpInfo' | translate }}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="copyright">
+            <p>{{ 'footerNavBar.copywriteLabel' | translate}} {{copywriteYear}} </p>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6 col-md-offset-4">
+          <div>
+            <app-social-media-list [styleToUse]="socialMediaStyle"></app-social-media-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

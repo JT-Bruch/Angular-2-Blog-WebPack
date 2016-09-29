@@ -1,0 +1,10 @@
+<div class="widget widget_categories">
+    <div class="widget-title">
+      <h5>{{'sidebar.categoriesTitle' | translate }}</h5>
+    </div>
+    <ul *ngFor="let cat of blogCategoryList">
+      <li class="cat-item">
+        <a href="">{{cat.name}}</a> <span *ngIf="cat.count"> ({{cat.count}})</span>
+      </li>
+    </ul>
+  </div>

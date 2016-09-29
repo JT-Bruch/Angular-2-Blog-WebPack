@@ -1,0 +1,4 @@
+<div *ngFor="let blog of blogList | async; let i = index">
+    <app-blog-preview [blog]="blog"></app-blog-preview>
+    <app-ad-preview *ngIf="i % 2 == 1" [adWidth]="728" [adHeight]="90"></app-ad-preview>
+</div>

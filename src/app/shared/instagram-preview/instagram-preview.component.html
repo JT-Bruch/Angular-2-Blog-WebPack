@@ -1,0 +1,10 @@
+<div class="widget widget_instagram">
+    <div class="widget-title">
+      <h5>Follow us on Instagram</h5>
+    </div>
+    <ul>
+      <li *ngFor="let item of instagramList">
+        <a [href]="item.link"><img [src]="item.source" alt="{{item.text}}"></a>
+      </li>
+    </ul>
+  </div>

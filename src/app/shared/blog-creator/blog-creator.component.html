@@ -1,0 +1,16 @@
+<div class="creator-panel">
+  <div class="creator-title">
+    <h5>{{ 'createArticle.creatorTitle' | translate }}</h5>
+  </div>
+  <div class="creator-content">
+    <textarea htmlEditor [(ngModel)]="storyHtml"></textarea>
+  </div>
+  <app-blog-tagger (onTagAdded)="onTagAdded($event)" [taggerAutoCompleteList]="blogCreatorCompleteTagList"></app-blog-tagger>
+  <div class="creator-separator">
+    <div class="mask"></div>
+    <span><i></i></span>
+  </div>
+  <div class="creator-preview">
+    <p [innerHTML]="storyHtml"></p>
+  </div>
+</div>

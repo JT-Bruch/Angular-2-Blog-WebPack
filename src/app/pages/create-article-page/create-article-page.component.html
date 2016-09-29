@@ -1,0 +1,4 @@
+<p>
+  <app-blog-creator (tagAdded)="tagAdded($event)" #creator [blogCreatorCompleteTagList]="autoCompleteTagList"></app-blog-creator>
+  <button (click)="getStoryHtml(creator.storyHtml)">Add Story</button>
+</p>

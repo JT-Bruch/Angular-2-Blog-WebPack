@@ -1,0 +1,36 @@
+<header id="home">
+  <div class="navbar-default">
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-home">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" (click)="isCollapsed = !isCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- TEMPLATE LOGO -->
+          <h2 class="navbar-brand">
+            <a href="#" routerLink="/home" routerLinkActive="active">{{'appTitle' | translate}}</a>
+          </h2>
+
+          <div class="social-icon">
+            <app-social-media-list [styleToUse]="socialMediaStyle"></app-social-media-list>
+          </div>
+        </div>
+
+        <div class="collapse navbar-collapse" [collapse]="isCollapsed" (collapsed)="collapsed($event)" (expanded)="expanded($event)">
+          <ul class="nav navbar-nav navbar-right">
+            <li routerLink="/home" routerLinkActive="active"><a href="">{{'mainNav.homePage' | translate }}</a></li>
+            <li routerLink="/about" routerLinkActive="active"><a href="">{{'mainNav.aboutPage' | translate }}</a></li>
+            <li routerLink="/readers" routerLinkActive="active"><a href="">{{'mainNav.forReadersPage' | translate }}</a></li>
+            <li routerLink="/more" routerLinkActive="active"><a href="">{{'mainNav.morePage' | translate }}</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </div>
+</header>

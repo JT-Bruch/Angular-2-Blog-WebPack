@@ -1,20 +1,55 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { NgModule }       from '@angular/core';
+import { BrowserModule, Title }  from '@angular/platform-browser';
+import { FormsModule }    from '@angular/forms';
+import { HttpModule, Http } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { AngularFireModule } from 'angularfire2';
+import { firebaseConfig as FireBaseConfig } from '../environments/firebase';
+
+import { AppComponent }       from './app.component';
+import { routing } from './app.routing';
+
+
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
+
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+
+
+import { HeaderComponent }   from './layout/header/header.component';
+import { FooterComponent }   from './layout/footer/footer.component';
+import { SidebarComponent }   from './layout/sidebar/sidebar.component';
+
+import { CollapseModule } from 'ng2-bootstrap/components/collapse';
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    TranslateModule.forRoot({
+          provide: TranslateLoader,
+          useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
+          deps: [Http]
+        }),
+    AngularFireModule.initializeApp(FireBaseConfig),
+    routing,
+    CoreModule,
+    SharedModule,
+    CollapseModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent
+
+  ],
+  providers: [
+    Title
+  ],
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,0 +1,7 @@
+<div class="creator-tagger">
+     <tag-input [(ngModel)]='nameList' [placeholder]="options.placeholder"
+           [autocompleteItems]="taggerAutoCompleteList"
+           [autocomplete]="true"
+           (onRemove)="onItemRemoved($event)"
+           (onAdd)="onItemAdded($event)"></tag-input>
+  </div>
