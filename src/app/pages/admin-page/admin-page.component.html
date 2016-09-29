@@ -1,0 +1,36 @@
+<div class="link-input-panel">
+  <div class="link-input-title">
+    <h5>{{ 'adminPage.title' | translate }}</h5>
+  </div>
+  <div class="link-input-content">
+    <button routerLink="/createarticle">Go To Create Article</button>
+    <button (click)="toggleAuth()">Toggle Auth</button>
+    <div>{{authService.isAuth}}</div>
+  </div>
+</div>
+
+<div>
+
+</div>
+
+<div class="link-input-panel">
+  <div class="link-input-title">
+    <h5>{{ 'createArticle.creatorTitle' | translate }}</h5>
+  </div>
+  <div class="link-input-content">
+    <div class="form-group">
+      <label for="user_username" class="control-label">Facebook:</label>
+      <input type="text" id="user_username" class="form-control" name="user_username" autofocus/>
+      <label for="user_username" class="control-label">Twitter:</label>
+      <input type="text" id="user_username" class="form-control" name="user_username" autofocus/>
+      <label for="user_username" class="control-label">LinkedIn:</label>
+      <input type="text" id="user_username" class="form-control" name="user_username" autofocus/>
+      <label for="user_username" class="control-label">GitHub:</label>
+      <input type="text" id="user_username" class="form-control" name="user_username" autofocus/>
+
+      <button (click)="updateSocialMedia()">Update Media</button>
+    </div>
+
+  </div>
+</div>
+

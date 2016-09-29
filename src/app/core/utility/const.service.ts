@@ -6,7 +6,8 @@ export class ConstService {
   public readonly maxBlogPosts: number = 5;
   public readonly maxCatToShow: number = 5;
 
-  public readonly categoryRoute: string = `/categories/`;
+  public readonly socialMediaRoute: string = `/socialmedia/`;
+  public readonly categoryRoute: string = `/blogcategories/`;
   public readonly blogRoute: string = `/blogs/`;
 
 }

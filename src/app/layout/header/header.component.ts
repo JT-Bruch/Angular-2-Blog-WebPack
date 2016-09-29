@@ -14,10 +14,7 @@ import { GlobalLinkService } from '../../core/database/global-link.service';
 
 export class HeaderComponent implements OnInit {
 
-  facebookLink: string = this.linkService.facebookLink;
-  twitterLink: string = this.linkService.twitterLink;
-  linkedInLink: string = this.linkService.linkedInLink;
-  githubLink: string = this.linkService.githubLink;
+
   isCollapsed: boolean = true;
   socialMediaStyle: string = 'header-style';
 

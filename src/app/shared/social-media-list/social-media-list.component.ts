@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GlobalLinkService } from '../../core/database/global-link.service';
+import { SocialMediaLinks } from '../../core/interfaces/social-media-links';
 
 @Component({
 
@@ -10,14 +11,15 @@ import { GlobalLinkService } from '../../core/database/global-link.service';
 })
 export class SocialMediaListComponent implements OnInit {
   @Input() styleToUse: string;
-  facebookLink: string = this.linkService.facebookLink;
-  twitterLink: string = this.linkService.twitterLink;
-  linkedInLink: string = this.linkService.linkedInLink;
-  githubLink: string = this.linkService.githubLink;
 
-  constructor(private linkService: GlobalLinkService) { }
+  socialMedia: SocialMediaLinks;
+
+  constructor(private linkService: GlobalLinkService) {
+    this.socialMedia = new SocialMediaLinks();
+  }
 
   ngOnInit() {
+    this.linkService.getSocialMedia().then(sm => this.socialMedia = sm);
   }
 
 }

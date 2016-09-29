@@ -21,9 +21,9 @@ export class BlogCategoryService {
 
   constructor(private af: AngularFire,
               private randomService: RandomService,
-              private constService: ConstService) {
+              private constSvc: ConstService) {
 
-    this.categories$ = af.database.list(constService.categoryRoute, { query: {
+    this.categories$ = af.database.list(constSvc.categoryRoute, { query: {
       orderByChild: 'name'
     }});
   }
@@ -36,11 +36,11 @@ export class BlogCategoryService {
   }
 
   getCategories(): firebase.Promise<any> {
-    return firebase.database().ref('/blogcategories/').once('value');
+    return firebase.database().ref(this.constSvc.categoryRoute).once('value');
   }
 
   getCategoriesByName(maxRows = 0): Promise<BlogCategory[]> {
-    let retVal = firebase.database().ref('/blogcategories/');
+    let retVal = firebase.database().ref(this.constSvc.categoryRoute);
     if (maxRows > 0) {
       retVal.limitToLast(maxRows);
     }
@@ -64,7 +64,7 @@ export class BlogCategoryService {
         '-KSbXFNgp7wQs_Hiu-nN': true
       }
     };
-    firebase.database().ref('/blogcategories/').push(newCat);
+    firebase.database().ref(this.constSvc.categoryRoute).push(newCat);
   }
 
   createBlogCategoryWithBlog(blogCat: BlogCategory, blogKey: FBlogKey): firebase.Promise<any> {
