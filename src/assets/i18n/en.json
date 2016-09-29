@@ -19,7 +19,8 @@
     },
     "adminPage": {
         "title": "Administration",
-        "testingTitle": "Testing Section"
+        "testingTitle": "Testing Section",
+        "facebook": "Facebook"
     },
     "sidebar": {
         "recommendedArticleTitle": "Recommended Articles",
