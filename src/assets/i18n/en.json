@@ -19,13 +19,18 @@
     },
     "adminPage": {
         "title": "Administration",
-        "testingTitle": "Testing Section",
-        "facebook": "Facebook"
+        "testingTitle": "Testing Section"
     },
     "sidebar": {
         "recommendedArticleTitle": "Recommended Articles",
         "recentArticleTitle": "Recent Articles",
         "categoriesTitle": "Categories"
+    },
+    "socialMedia": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "github": "GitHub",
+        "linkedin": "Linked In"
     },
     "blogPreview":{
         "viewCountLabel": "views",
