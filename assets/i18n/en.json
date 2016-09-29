@@ -17,6 +17,10 @@
         "upcomingNewsInfo": "Upcoming News",
         "meetUpInfo": "Meet-Ups"
     },
+    "adminPage": {
+        "title": "Administration",
+        "testingTitle": "Testing Section"
+    },
     "sidebar": {
         "recommendedArticleTitle": "Recommended Articles",
         "recentArticleTitle": "Recent Articles",
