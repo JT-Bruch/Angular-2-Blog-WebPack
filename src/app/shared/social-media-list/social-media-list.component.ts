@@ -6,7 +6,7 @@ import { SocialMediaLinks } from '../../core/interfaces/social-media-links';
 
   selector: 'app-social-media-list',
   templateUrl: 'social-media-list.component.html',
-  styleUrls: ['social-media-list.component.sass'],
+  styleUrls: ['social-media-list.component.scss'],
   providers: [GlobalLinkService]
 })
 export class SocialMediaListComponent implements OnInit {

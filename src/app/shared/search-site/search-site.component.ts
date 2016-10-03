@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
   selector: 'app-search-site',
   templateUrl: 'search-site.component.html',
-  styleUrls: ['search-site.component.sass']
+  styleUrls: ['search-site.component.scss']
 })
 export class SearchSiteComponent implements OnInit {
 

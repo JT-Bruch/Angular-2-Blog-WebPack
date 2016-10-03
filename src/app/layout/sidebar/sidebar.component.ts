@@ -14,7 +14,7 @@ import { BlogCategoryService } from '../../core/database/blog-category.service';
 
   selector: 'app-sidebar',
   templateUrl: 'sidebar.component.html',
-  styleUrls: ['sidebar.component.sass']
+  styleUrls: ['sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
 

@@ -8,7 +8,7 @@ import { GlobalLinkService } from '../../core/database/global-link.service';
 
   selector: 'app-header',
   templateUrl: 'header.component.html',
-  styleUrls: ['header.component.sass'],
+  styleUrls: ['header.component.scss'],
   providers: [],
 })
 

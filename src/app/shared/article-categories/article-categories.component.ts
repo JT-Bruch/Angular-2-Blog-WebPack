@@ -6,7 +6,7 @@ import { BlogCategory } from '../../core/interfaces/blog-category';
 
   selector: 'app-article-categories',
   templateUrl: 'article-categories.component.html',
-  styleUrls: ['article-categories.component.sass']
+  styleUrls: ['article-categories.component.scss']
 })
 export class ArticleCategoriesComponent implements OnInit {
 

@@ -5,7 +5,7 @@ import { InstagramItem, InstagramListService } from '../../core/social/instagram
 
   selector: 'app-instagram-preview',
   templateUrl: 'instagram-preview.component.html',
-  styleUrls: ['instagram-preview.component.sass']
+  styleUrls: ['instagram-preview.component.scss']
 })
 export class InstagramPreviewComponent implements OnInit {
 

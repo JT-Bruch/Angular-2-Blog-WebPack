@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
   selector: 'app-recommended-articles',
   templateUrl: 'recommended-articles.component.html',
-  styleUrls: ['recommended-articles.component.sass']
+  styleUrls: ['recommended-articles.component.scss']
 })
 export class RecommendedArticlesComponent implements OnInit {
 

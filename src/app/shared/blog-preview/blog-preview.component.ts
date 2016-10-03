@@ -5,7 +5,7 @@ import { BlogPost } from '../../core/interfaces/blog-post';
 
   selector: 'app-blog-preview',
   templateUrl: 'blog-preview.component.html',
-  styleUrls: ['blog-preview.component.sass']
+  styleUrls: ['blog-preview.component.scss']
 })
 export class BlogPreviewComponent implements OnInit {
 

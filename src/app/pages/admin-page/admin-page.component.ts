@@ -5,7 +5,7 @@ import { AuthGuardService } from './../../core/auth/auth-guard.service';
 @Component({
   selector: 'app-admin-page',
   templateUrl: './admin-page.component.html',
-  styleUrls: ['./admin-page.component.sass']
+  styleUrls: ['./admin-page.component.scss']
 })
 export class AdminPageComponent implements OnInit {
 

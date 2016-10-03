@@ -6,7 +6,7 @@ import { GlobalLinkService } from './../../core/database/global-link.service';
 
   selector: 'app-footer',
   templateUrl: 'footer.component.html',
-  styleUrls: ['footer.component.sass']
+  styleUrls: ['footer.component.scss']
 })
 export class FooterComponent implements OnInit {
 

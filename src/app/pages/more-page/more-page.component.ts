@@ -5,7 +5,7 @@ import { AuthGuardService } from './../../core/auth/auth-guard.service';
 @Component({
   selector: 'app-more-page',
   templateUrl: './more-page.component.html',
-  styleUrls: ['./more-page.component.sass']
+  styleUrls: ['./more-page.component.scss']
 })
 export class MorePageComponent implements OnInit {
 

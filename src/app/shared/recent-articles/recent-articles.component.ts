@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
   selector: 'app-recent-articles',
   templateUrl: 'recent-articles.component.html',
-  styleUrls: ['recent-articles.component.sass']
+  styleUrls: ['recent-articles.component.scss']
 })
 export class RecentArticlesComponent implements OnInit {
 

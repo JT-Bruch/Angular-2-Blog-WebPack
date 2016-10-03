@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
   selector: 'app-ad-preview',
   templateUrl: 'ad-preview.component.html',
-  styleUrls: ['ad-preview.component.sass']
+  styleUrls: ['ad-preview.component.scss']
 })
 export class AdPreviewComponent implements OnInit {
   @Input() adWidth: number;

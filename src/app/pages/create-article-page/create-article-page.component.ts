@@ -11,7 +11,7 @@ import { RandomService } from '../../core/utility/random.service';
 @Component({
   selector: 'app-create-article-page',
   templateUrl: './create-article-page.component.html',
-  styleUrls: ['./create-article-page.component.sass']
+  styleUrls: ['./create-article-page.component.scss']
 })
 export class CreateArticlePageComponent implements OnInit {
 

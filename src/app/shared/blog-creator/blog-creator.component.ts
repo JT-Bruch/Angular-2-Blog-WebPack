@@ -4,7 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
   selector: 'app-blog-creator',
   templateUrl: 'blog-creator.component.html',
-  styleUrls: ['blog-creator.component.sass']
+  styleUrls: ['blog-creator.component.scss']
 })
 export class BlogCreatorComponent implements OnInit {
 
