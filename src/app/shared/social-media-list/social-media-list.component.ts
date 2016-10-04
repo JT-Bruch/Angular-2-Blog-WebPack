@@ -12,10 +12,10 @@ import { SocialMediaLinks } from '../../core/interfaces/social-media-links';
 export class SocialMediaListComponent implements OnInit {
   @Input() styleToUse: string;
 
-  socialMedia: SocialMediaLinks;
+  socialMedia: SocialMediaLinks = new SocialMediaLinks();
 
   constructor(private linkService: GlobalLinkService) {
-    this.socialMedia = new SocialMediaLinks();
+
   }
 
   ngOnInit() {

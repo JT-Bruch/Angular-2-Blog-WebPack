@@ -30,7 +30,11 @@
         "facebook": "Facebook",
         "twitter": "Twitter",
         "github": "GitHub",
-        "linkedin": "Linked In"
+        "linkedin": "LinkedIn",
+        "facebookColon": "Facebook:",
+        "twitterColon": "Twitter:",
+        "githubColon": "GitHub:",
+        "linkedinColon": "LinkedIn:"
     },
     "blogPreview":{
         "viewCountLabel": "views",

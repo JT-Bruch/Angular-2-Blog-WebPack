@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { AngularFire } from 'angularfire2';
+import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 
 
 import { SocialMediaLinks } from '../interfaces/social-media-links';
@@ -11,10 +11,15 @@ export class GlobalLinkService {
 
   copywriteYear: string = this.generateCopywriteYear();
 
+  public socialMedia$: FirebaseObjectObservable<SocialMediaLinks>;
+
 
   constructor(private af: AngularFire,
-              private constSvc: ConstService) {
+              private constService: ConstService) {
+
+    this.socialMedia$ = af.database.object(this.constService.socialMediaRoute + 'default/');
   }
+
 
   generateCopywriteYear(): string {
     const dateNow = new Date();
@@ -24,11 +29,13 @@ export class GlobalLinkService {
 
   addSocialMedia(val: SocialMediaLinks): void {
     val.createDate = firebase.database.ServerValue.TIMESTAMP;
-    firebase.database().ref(this.constSvc.socialMediaRoute).push(val);
+    console.log(val);
+    firebase.database().ref(this.constService.socialMediaRoute).child('default').set(val);
   }
 
   getSocialMedia(): firebase.Promise<SocialMediaLinks> {
-    return firebase.database().ref(this.constSvc.socialMediaRoute).once('value');
+    return firebase.database().ref(this.constService.socialMediaRoute).child('default').once('value');
+
   }
 
 

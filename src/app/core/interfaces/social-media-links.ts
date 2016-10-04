@@ -1,5 +1,4 @@
 export interface SocialMediaLinks {
-  $key?: string;
   facebook: string;
   twitter: string;
   github: string;

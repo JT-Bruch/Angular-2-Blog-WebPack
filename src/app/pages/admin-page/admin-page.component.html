@@ -3,8 +3,11 @@
     <h5>{{ 'adminPage.title' | translate }}</h5>
   </div>
   <div class="link-input-content">
-    <button routerLink="/createarticle">Go To Create Article</button>
-    <button (click)="toggleAuth()">Toggle Auth</button>
+
+    <div class="col-sm-6"><button routerLink="/createarticle">Go To Create Article</button></div>
+    <div class="col-sm-6"><button (click)="toggleAuth()">Toggle Auth</button></div>
+
+
     <div>{{authService.isAuth}}</div>
   </div>
 </div>
@@ -18,39 +21,18 @@
     <h5>{{ 'createArticle.creatorTitle' | translate }}</h5>
   </div>
   <div class="link-input-content">
-    <form>
-      <div class="field name-box">
-        <input type="text" id="name" placeholder="Who Are You?" />
-        <label for="name">Name</label>
-        <span class="ss-icon">check</span>
-      </div>
-
-      <div class="field email-box">
-        <input type="text" id="email" placeholder="name@email.com" />
-        <label for="email">Email</label>
-        <span class="ss-icon">check</span>
-      </div>
-
-      <div class="field msg-box">
-        <textarea id="msg" rows="4" placeholder="Your message goes here..." ></textarea>
-        <label for="msg">Msg</label>
-        <span class="ss-icon">check</span>
-      </div>
-
-      <input class="button" type="submit" value="Send" />
-    </form>
     <div class="form-group">
-      <label for="user_username" class="control-label">Facebook:</label>
-      <input type="text" id="user_username" class="form-control" name="user_username" autofocus/>
-      <label for="user_username" class="control-label">Twitter:</label>
-      <input type="text" id="user_username" class="form-control" name="user_username" autofocus/>
-      <label for="user_username" class="control-label">LinkedIn:</label>
-      <input type="text" id="user_username" class="form-control" name="user_username" autofocus/>
-      <label for="user_username" class="control-label">GitHub:</label>
-      <input type="text" id="user_username" class="form-control" name="user_username" autofocus/>
+      <input placeholder="{{'socialMedia.facebook' | translate}}" type="text" required="" autofocus >
+      <input placeholder="{{'socialMedia.twitter' | translate}}" type="text" required="" autofocus [(ngModel)]="socialMedia.twitter">
+      <input placeholder="{{'socialMedia.github' | translate}}" type="text" required="" autofocus [(ngModel)]="socialMedia.github">
+      <input placeholder="{{'socialMedia.linkedin' | translate}}" type="text" required="" autofocus [(ngModel)]="socialMedia.linkedin">
+      <p>test {{(socialMedia | async)?.facebook}}</p>
 
       <button (click)="updateSocialMedia()">Update Media</button>
     </div>
 
+
+
   </div>
 </div>
+
