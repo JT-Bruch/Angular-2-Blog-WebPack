@@ -1,15 +1,2 @@
-<div class="link-input-panel">
-  <div class="link-input-title">
-    <h5>{{ 'adminPage.title' | translate }}</h5>
-  </div>
-  <div class="link-input-content">
-
-    <div class="col-sm-6"><button routerLink="/createarticle">Go To Create Article</button></div>
-    <div class="col-sm-6"><button (click)="toggleAuth()">Toggle Auth</button></div>
-
-
-    <div>{{authService.isAuth}}</div>
-  </div>
-</div>
-
+<app-admin-debug></app-admin-debug>
 <app-admin-social-input [socialMediaInput]="socialMedia | async" (onChange)="updateSocialMedia($event)" ></app-admin-social-input>

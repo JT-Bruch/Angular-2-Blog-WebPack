@@ -9,8 +9,16 @@
 $white: #FFF;
 $off-gray: #f0f0f0;
 $black: #000;
+$red: #f0f0f0;
 
 $soft-red: #fb0d29;
+$accent-red: #FF5252;
+$blue-grey: #455A64;
+$light-grey:rgba(117, 117, 117, 0.35);
+
+$primary-color: $soft-red;
+$accent-color: $blue-grey;
+$warning-color: $red;
 
 //
 // FONT PALETTE
@@ -32,3 +40,4 @@ $navbar-nav-font: $montserrat-font;
 // MAIN APP COLORS
 //
 $content-background-color: $off-gray;
+$title-border-grey: $light-grey;

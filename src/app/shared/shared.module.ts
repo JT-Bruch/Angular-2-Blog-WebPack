@@ -8,6 +8,7 @@ import { HtmlEditorDirective }  from './html-editor/html-editor.directive';
 
 import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { TagInputModule } from 'ng2-tag-input';
+import { MaterialModule } from '@angular/material';
 
 import { SocialMediaListComponent }  from './social-media-list/social-media-list.component';
 import { BlogCreatorComponent }  from './blog-creator/blog-creator.component';
@@ -21,6 +22,7 @@ import { RecentArticlesComponent }  from './recent-articles/recent-articles.comp
 import { RecommendedArticlesComponent }  from './recommended-articles/recommended-articles.component';
 import { SearchSiteComponent }  from './search-site/search-site.component';
 import { AdminSocialInputComponent } from './admin-social-input/admin-social-input.component';
+import { AdminDebugComponent } from './admin-debug/admin-debug.component';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { AdminSocialInputComponent } from './admin-social-input/admin-social-inp
             CommonModule,
             TranslateModule,
             FormsModule,
-            TagInputModule
+            TagInputModule,
+            MaterialModule
   ],
   declarations: [
                   HighlightDirective,
@@ -44,7 +47,8 @@ import { AdminSocialInputComponent } from './admin-social-input/admin-social-inp
                   RecommendedArticlesComponent,
                   SearchSiteComponent,
                   HtmlEditorDirective,
-                  AdminSocialInputComponent
+                  AdminSocialInputComponent,
+                  AdminDebugComponent
 
   ],
   exports: [
@@ -61,6 +65,7 @@ import { AdminSocialInputComponent } from './admin-social-input/admin-social-inp
             RecommendedArticlesComponent,
             SearchSiteComponent,
             AdminSocialInputComponent,
+            AdminDebugComponent,
             HtmlEditorDirective,
             CommonModule,
             FormsModule

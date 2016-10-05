@@ -5,3 +5,10 @@
 <button routerLink="/admin">Go To Admin</button>
 <button (click)="toggleAuth()">Toggle Auth</button>
 <div>{{authService.isAuth}}</div>
+
+<div>
+  <md-list>
+   <md-list-item (click)="toggleLang('en-US')"> English (United States)</md-list-item>
+   <md-list-item (click)="toggleLang('en-UK')"> English (United Kingdom) </md-list-item>
+  </md-list>
+</div>

@@ -7,6 +7,7 @@ import { HttpModule, Http } from '@angular/http';
 
 import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig as FireBaseConfig } from '../environments/firebase';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent }       from './app.component';
 import { routing } from './app.routing';
@@ -26,11 +27,13 @@ import { CollapseModule } from 'ng2-bootstrap/components/collapse';
 
 
 
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    MaterialModule.forRoot(),
     TranslateModule.forRoot({
           provide: TranslateLoader,
           useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),

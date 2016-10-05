@@ -21,6 +21,9 @@
         "title": "Administration",
         "testingTitle": "Testing Section"
     },
+    "adminSocial": {
+        "title": "Link Social Media"
+    },
     "sidebar": {
         "recommendedArticleTitle": "Recommended Articles",
         "recentArticleTitle": "Recent Articles",
