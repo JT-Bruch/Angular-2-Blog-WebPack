@@ -8,7 +8,15 @@
 
 <div>
   <md-list>
-   <md-list-item (click)="toggleLang('en-US')"> English (United States)</md-list-item>
-   <md-list-item (click)="toggleLang('en-UK')"> English (United Kingdom) </md-list-item>
+    <md-list-item (click)="toggleLang('en-US')">
+      <img md-list-avatar src="./assets/flags-iso/flat/32/US.png" alt="...">
+      English (United States)
+    </md-list-item>
+  </md-list>
+  <md-list>
+    <md-list-item (click)="toggleLang('en-GB')">
+      <img md-list-avatar src="./assets/flags-iso/flat/32/GB.png" alt="...">
+      English (United Kingdom)
+    </md-list-item>
   </md-list>
 </div>
