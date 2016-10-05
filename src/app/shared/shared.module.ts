@@ -20,6 +20,7 @@ import { ArticleCategoriesComponent }  from './article-categories/article-catego
 import { RecentArticlesComponent }  from './recent-articles/recent-articles.component';
 import { RecommendedArticlesComponent }  from './recommended-articles/recommended-articles.component';
 import { SearchSiteComponent }  from './search-site/search-site.component';
+import { AdminSocialInputComponent } from './admin-social-input/admin-social-input.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { SearchSiteComponent }  from './search-site/search-site.component';
                   RecentArticlesComponent,
                   RecommendedArticlesComponent,
                   SearchSiteComponent,
-                  HtmlEditorDirective
+                  HtmlEditorDirective,
+                  AdminSocialInputComponent
 
   ],
   exports: [
@@ -58,6 +60,7 @@ import { SearchSiteComponent }  from './search-site/search-site.component';
             RecentArticlesComponent,
             RecommendedArticlesComponent,
             SearchSiteComponent,
+            AdminSocialInputComponent,
             HtmlEditorDirective,
             CommonModule,
             FormsModule

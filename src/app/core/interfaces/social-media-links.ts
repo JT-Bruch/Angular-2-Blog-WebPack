@@ -3,7 +3,8 @@ export interface SocialMediaLinks {
   twitter: string;
   github: string;
   linkedin: string;
-  createDate: string;
+  createDate?: string;
+  $key?: string;
 }
 
 export class SocialMediaLinks implements SocialMediaLinks {
@@ -12,10 +13,10 @@ export class SocialMediaLinks implements SocialMediaLinks {
               twitter?: string,
               linkedin?: string,
               github?: string) {
-    facebook = '';
-    twitter = '';
-    linkedin = '';
-    github = '';
+    this.facebook = facebook;
+    this.twitter = twitter;
+    this.linkedin = linkedin;
+    this.github = github;
   }
 
 }

@@ -1,0 +1,19 @@
+<div class="link-input-panel">
+  <div class="link-input-title">
+    <h5>{{ 'createArticle.creatorTitle' | translate }}</h5>
+  </div>
+  <div class="link-input-content">
+    <div class="form-group">
+      <input placeholder="{{'socialMedia.facebook' | translate}}" type="text" required="" autofocus [(ngModel)]="internalModel.facebook">
+      <input placeholder="{{'socialMedia.twitter' | translate}}" type="text" required="" autofocus [(ngModel)]="internalModel.twitter">
+      <input placeholder="{{'socialMedia.github' | translate}}" type="text" required="" autofocus [(ngModel)]="internalModel.github">
+      <input placeholder="{{'socialMedia.linkedin' | translate}}" type="text" required="" autofocus [(ngModel)]="internalModel.linkedin">
+
+      <button (click)="onSave()">Update Media</button>
+    </div>
+
+
+
+  </div>
+</div>
+

@@ -17,7 +17,7 @@
           </h2>
 
           <div class="social-icon">
-            <app-social-media-list [styleToUse]="socialMediaStyle"></app-social-media-list>
+            <app-social-media-list [socialMediaInput]="socialMedia | async" [styleToUse]="socialMediaStyle"></app-social-media-list>
           </div>
         </div>
 

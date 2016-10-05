@@ -26,7 +26,8 @@ export class AdminPageComponent implements OnInit {
     this.authService.isAuth = !this.authService.isAuth;
   }
 
-  updateSocialMedia() {
+  updateSocialMedia(updatedMedia: SocialMediaLinks) {
+    this.linkService.addSocialMedia(updatedMedia);
 
   }
 

@@ -25,6 +25,7 @@ import { SidebarComponent }   from './layout/sidebar/sidebar.component';
 import { CollapseModule } from 'ng2-bootstrap/components/collapse';
 
 
+
 @NgModule({
   imports: [
     BrowserModule,

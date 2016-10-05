@@ -59,7 +59,7 @@
         </div>
         <div class="col-md-2 col-sm-6 col-md-offset-4">
           <div>
-            <app-social-media-list [styleToUse]="socialMediaStyle"></app-social-media-list>
+            <app-social-media-list [socialMediaInput]="socialMedia | async"  [styleToUse]="socialMediaStyle"></app-social-media-list>
           </div>
         </div>
       </div>
