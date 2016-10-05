@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/switchMap';
 
 import { BlogCategory, FBlogKey } from '../interfaces/blog-category';
 import { ConstService } from '../utility/const.service';

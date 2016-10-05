@@ -5,9 +5,6 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Observable } from 'rxjs/Observable';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/switchMap';
-
 import { BlogPost, FCatKey } from '../interfaces/blog-post';
 import { ConstService } from '../utility/const.service';
 import { RandomService } from '../utility/random.service';
