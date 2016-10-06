@@ -29,7 +29,7 @@
     <span class="post-impress"><i class="fa fa-heart-o"></i> {{blog.viewCount}}</span>
     <span class="comments-no">{{blog.commentCount}} {{'blogPreview.commentsLabel' | translate}} </span>
   </div>
-  <div class="blog-btn">
-    <a class="btn btn-one" href="{{blog.linkUrl}}">{{'blogPreview.readMoreLabelUppercase' | translate}} <i class="fa fa-long-arrow-right"></i></a>
+  <div class="blog-btn" (click)="blogPreviewClicked()">
+    <a class="btn btn-one">{{'blogPreview.readMoreLabelUppercase' | translate}} <i class="fa fa-long-arrow-right"></i></a>
   </div>
 </article>

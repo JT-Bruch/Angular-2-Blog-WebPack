@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Observable } from 'rxjs/Observable';
 
 import { BlogService } from '../../core/database/blog.service';
@@ -14,10 +16,16 @@ export class HomePageComponent implements OnInit {
 
   blogList: Observable<BlogPost[]>;
 
-  constructor(public blogService: BlogService) { }
+  constructor(public blogService: BlogService,
+              private router: Router) { }
 
   ngOnInit() {
     this.blogList = this.blogService.blogs$;
+  }
+
+  openBlogPage(blogKey: string) {
+    console.log(blogKey);
+    this.router.navigate(['/blogpost', blogKey]);
   }
 
 }
