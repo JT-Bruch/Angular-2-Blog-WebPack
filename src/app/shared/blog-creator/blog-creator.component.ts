@@ -1,5 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+export interface BlogArticle {
+  html: string;
+  title: string;
+  description: string;
+  author: string;
+}
+
 @Component({
 
   selector: 'app-blog-creator',
@@ -9,9 +16,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class BlogCreatorComponent implements OnInit {
 
   @Output() tagAdded = new EventEmitter<string>();
+  @Output() articleSubmitted = new EventEmitter<BlogArticle>();
   @Input() blogCreatorCompleteTagList: string[];
+  @Input() enablePreview: boolean = false;
 
-  storyHtml: string;
+  story: BlogArticle = {
+    title: '',
+    html: '',
+    description: '',
+    author: ''
+  };
+
   options = {
     placeholder: '+ term',
     secondaryPlaceholder: 'Enter a new term',
@@ -19,23 +34,23 @@ export class BlogCreatorComponent implements OnInit {
 
 
   constructor() {
-    this.storyHtml = `<p>My new story.</p>`;
+
    }
 
   ngOnInit() {
   }
 
   onTagAdded(val: string) {
-    console.log(`blog-creator: ${val}`);
     this.tagAdded.emit(val);
   }
 
-  testEmit(val: string) {
-    this.tagAdded.emit(val);
+
+  addArticle() {
+    this.articleSubmitted.emit(this.story);
   }
 
   keyupOnEditor(storyContent: string) {
-    this.storyHtml = storyContent;
+    this.story.html = storyContent;
   }
 
 

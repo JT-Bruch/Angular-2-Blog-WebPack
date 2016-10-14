@@ -56,6 +56,10 @@
         "copywriteLabel": "Copyright ©"
     },
     "createArticle": {
-        "creatorTitle": "Create Article"
+        "creatorTitle": "Create an Article",
+        "title": "Title",
+        "description": "Description",
+        "author": "Author",
+        "addArticle": "Publish Article"
     }
 }

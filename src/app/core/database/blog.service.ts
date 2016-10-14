@@ -16,6 +16,7 @@ export class BlogService {
 
 
   public blogs$: FirebaseListObservable<BlogPost[]>;
+
   private filter$: ReplaySubject<any> = new ReplaySubject(1);
   private filteredBlogs$: FirebaseListObservable<BlogPost[]>;
 
@@ -27,8 +28,6 @@ export class BlogService {
       orderByChild: 'displayOrder',
       limitToFirst: constService.maxBlogPosts
     }});
-
-
 
     this.filteredBlogs$ = af.database.list(path, {query: {
       orderByChild: 'modDate',
@@ -42,7 +41,7 @@ export class BlogService {
 
 
   createBlog(blog: BlogPost): firebase.Promise<any> {
-    return this.blogs$.push(blog);
+    return firebase.database().ref(this.constService.blogRoute).push(blog);
   }
 
   removeBlog(blog: BlogPost): firebase.Promise<any> {
@@ -64,6 +63,7 @@ export class BlogService {
         viewCount: this.randomService.getRandomInt(1, 1000),
         title: this.randomService.getRandomSentence(),
         description: this.randomService.getRandomParagraph(),
+        articleContent: this.randomService.getRandomParagraph(),
         likeCount: this.randomService.getRandomInt(1, 1000),
         commentCount: this.randomService.getRandomInt(1, 20),
         linkUrl: this.randomService.getRandomGoogleUrl(),

@@ -3,14 +3,35 @@
     <h5>{{ 'createArticle.creatorTitle' | translate }}</h5>
   </div>
   <div class="creator-content">
+    <div class="row">
+      <div class="col-sm-12">
+        <md-input placeholder="{{'createArticle.title' | translate}}" type="text" required="" autofocus [(ngModel)]="story.title"></md-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <md-input placeholder="{{'createArticle.description' | translate}}" type="text" required="" autofocus [(ngModel)]="story.description"></md-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <md-input placeholder="{{'createArticle.author' | translate}}" type="text" required="" autofocus [(ngModel)]="story.author"></md-input>
+      </div>
+    </div>
     <app-tiny-mce  [elementId]="'my-editor-id'"  (onEditorKeyup)="keyupOnEditor($event)"></app-tiny-mce>
   </div>
   <app-blog-tagger (onTagAdded)="onTagAdded($event)" [taggerAutoCompleteList]="blogCreatorCompleteTagList"></app-blog-tagger>
-  <div class="creator-separator">
+  <div class="creator-separator" *ngIf="enablePreview">
     <div class="mask"></div>
     <span><i></i></span>
   </div>
-  <div class="creator-preview">
-    <p [innerHTML]="storyHtml"></p>
+  <div class="creator-preview" *ngIf="enablePreview">
+    <p [innerHTML]="story.html"></p>
+  </div>
+  <div class="creator-separator">
+    <div class="mask"></div>
+  </div>
+  <div class="creator-submit">
+    <button md-raised-button color="primary" (click)="addArticle()">{{'createArticle.addArticle' | translate}}</button>
   </div>
 </div>

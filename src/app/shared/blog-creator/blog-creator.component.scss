@@ -34,9 +34,15 @@
       padding-bottom: 25px;
       border-bottom: 1px solid rgba(117, 117, 117, 0.35);
     }
+
   }
 
   .creator-content {
+
+     md-input {
+      width: 100%;
+    }
+
     textarea {
       height: 400px;
     }
@@ -96,6 +102,12 @@
       height: 150px;
       line-height: 150%;
       resize: vertical;
+    }
+  }
+
+  .creator-submit {
+    button {
+      width: 100%;
     }
   }
 }

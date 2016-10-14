@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BlogCategory } from '../../core/interfaces/blog-category';
+import { BlogPost } from '../../core/interfaces/blog-post';
 
 import { BlogService } from '../../core/database/blog.service';
 import { BlogCategoryService } from '../../core/database/blog-category.service';
-
-import { BlogCategory } from '../../core/interfaces/blog-category';
-
 import { RandomService } from '../../core/utility/random.service';
+
+import { BlogArticle } from '../../shared/blog-creator/blog-creator.component';
 
 @Component({
   selector: 'app-create-article-page',
@@ -36,14 +37,18 @@ export class CreateArticlePageComponent implements OnInit {
     });
   }
 
-  getStoryHtml(html: string): void {
-    let testPost = this.blogService.createFakeBlogPost();
-    testPost.description += this.randomService.getRandomParagraph();
-    testPost.description += this.randomService.getRandomParagraph();
-    testPost.description += this.randomService.getRandomParagraph();
-    testPost.description += this.randomService.getRandomParagraph();
+  addStory(article: BlogArticle): void {
 
-    this.blogService.createBlog(this.blogService.createFakeBlogPost());
+
+    let testPost: BlogPost = this.blogService.createFakeBlogPost();
+    testPost.title = article.title;
+    testPost.author = article.author;
+    testPost.description = article.description;
+    testPost.articleContent = article.html;
+
+
+
+    this.blogService.createBlog(testPost);
   }
 
   tagAdded(val: string): void {

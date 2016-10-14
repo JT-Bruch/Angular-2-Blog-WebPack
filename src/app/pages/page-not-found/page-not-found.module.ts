@@ -28,4 +28,4 @@ import { pageNotFoundRouting as PageNotFoundRouting }  from './page-not-found.ro
             FormsModule
   ]
 })
-export class AboutPageModule { }
+export class PageNotFoundModule { }

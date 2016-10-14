@@ -10,6 +10,7 @@ export interface BlogPost {
   description: string;
   likeCount: number;
   commentCount: number;
+  articleContent: string;
   linkUrl: string;
   categories: FCatKey;
   modDateObj?: Date;

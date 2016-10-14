@@ -65,9 +65,11 @@ export class BlogCategoryService {
     firebase.database().ref(this.constSvc.categoryRoute).push(newCat);
   }
 
-  createBlogCategoryWithBlog(blogCat: BlogCategory, blogKey: FBlogKey): firebase.Promise<any> {
-    return this.categoriesObj$.set(blogCat);
+  addBlogToCategory(blogCat: BlogCategory, blogKey: FBlogKey): firebase.Promise<any> {
+    blogCat.blogs = blogKey;
+    return firebase.database().ref(this.constSvc.categoryRoute).set(blogCat);
   }
+
   removeBlogCategory(blogCat: BlogCategory): firebase.Promise<any> {
     return this.categories$.remove(blogCat.$key);
   }
