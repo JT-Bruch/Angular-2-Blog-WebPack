@@ -32,7 +32,7 @@ export class TinyMceComponent implements AfterViewInit, OnDestroy {
     tinymce.init({
       selector: '#' + this.elementId,
       plugins: ['link', 'paste', 'table'],
-      skin_url: '/assets/tiny-mce/skins/lightgray',
+      skin_url: './assets/tinymce/skins/lightgray',
       setup: editor => {
         this.editor = editor;
         editor.on('keyup', () => {

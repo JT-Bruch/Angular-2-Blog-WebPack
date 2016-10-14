@@ -3,9 +3,6 @@
     <h5>{{ 'createArticle.creatorTitle' | translate }}</h5>
   </div>
   <div class="creator-content">
-    <textarea htmlEditor [(ngModel)]="storyHtml"></textarea>
-  </div>
-  <div class="creator-content">
     <app-tiny-mce  [elementId]="'my-editor-id'"  (onEditorKeyup)="keyupOnEditor($event)"></app-tiny-mce>
   </div>
   <app-blog-tagger (onTagAdded)="onTagAdded($event)" [taggerAutoCompleteList]="blogCreatorCompleteTagList"></app-blog-tagger>
