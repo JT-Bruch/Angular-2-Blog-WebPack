@@ -65,7 +65,7 @@ export class HtmlEditorDirective implements OnDestroy, AfterViewInit, ControlVal
     }
 
     setUpdateCallback(): void {
-      tinymce.activeEditor.on('blur', () => this.updateValue());
+      tinymce.activeEditor.on('keyup', () => this.updateValue());
     }
 
 

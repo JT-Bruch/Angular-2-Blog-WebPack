@@ -6,5 +6,4 @@ declare var System: any;
 declare namespace firebase.database.ServerValue {
   var TIMESTAMP: any
 }
-declare var require: any;
-declare var module: any;
+declare var tinymce: any;

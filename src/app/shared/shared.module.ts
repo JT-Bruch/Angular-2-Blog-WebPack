@@ -23,6 +23,7 @@ import { RecommendedArticlesComponent }  from './recommended-articles/recommende
 import { SearchSiteComponent }  from './search-site/search-site.component';
 import { AdminSocialInputComponent } from './admin-social-input/admin-social-input.component';
 import { AdminDebugComponent } from './admin-debug/admin-debug.component';
+import { TinyMceComponent } from './tiny-mce/tiny-mce.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { AdminDebugComponent } from './admin-debug/admin-debug.component';
                   SearchSiteComponent,
                   HtmlEditorDirective,
                   AdminSocialInputComponent,
-                  AdminDebugComponent
+                  AdminDebugComponent,
+                  TinyMceComponent
 
   ],
   exports: [
@@ -67,6 +69,7 @@ import { AdminDebugComponent } from './admin-debug/admin-debug.component';
             AdminSocialInputComponent,
             AdminDebugComponent,
             HtmlEditorDirective,
+            TinyMceComponent,
             CommonModule,
             FormsModule
   ]

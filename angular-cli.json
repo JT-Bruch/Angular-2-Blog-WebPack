@@ -1,6 +1,6 @@
 {
   "project": {
-    "version": "1.0.0-beta.15",
+    "version": "1.0.0-beta.17",
     "name": "angular-2-blog"
   },
   "apps": [
@@ -20,6 +20,7 @@
         "styles.scss"
       ],
       "scripts": [
+        "../node_modules/tinymce/tinymce.js",
         "../node_modules/chance/dist/chance.min.js"
       ],
       "environments": {

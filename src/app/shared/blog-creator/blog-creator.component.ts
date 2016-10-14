@@ -34,5 +34,9 @@ export class BlogCreatorComponent implements OnInit {
     this.tagAdded.emit(val);
   }
 
+  keyupOnEditor(storyContent: string) {
+    this.storyHtml = storyContent;
+  }
+
 
 }

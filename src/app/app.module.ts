@@ -26,6 +26,9 @@ import { SidebarComponent }   from './layout/sidebar/sidebar.component';
 import { CollapseModule } from 'ng2-bootstrap/components/collapse';
 
 
+export function createTranslateLoader(http: Http) {
+  return new TranslateStaticLoader(http, '/assets/i18n', '.json');
+}
 
 
 @NgModule({
@@ -36,7 +39,7 @@ import { CollapseModule } from 'ng2-bootstrap/components/collapse';
     MaterialModule.forRoot(),
     TranslateModule.forRoot({
           provide: TranslateLoader,
-          useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
+          useFactory: (createTranslateLoader),
           deps: [Http]
         }),
     AngularFireModule.initializeApp(FireBaseConfig),
