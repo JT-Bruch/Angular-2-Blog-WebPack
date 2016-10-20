@@ -8,7 +8,7 @@ import { BlogPostPageComponent } from './blog-post-page.component';
 
 const blogPostPageRoutes: Routes = [
   {
-    path: '',
+    path: ':id',
     component: BlogPostPageComponent
   }
 ];

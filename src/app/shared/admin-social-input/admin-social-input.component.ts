@@ -10,7 +10,7 @@ import { SocialMediaLinks } from './../../core/interfaces/social-media-links';
 export class AdminSocialInputComponent implements OnInit, OnChanges {
 
   @Input() socialMediaInput: SocialMediaLinks;
-  @Output() onChange: EventEmitter<SocialMediaLinks> = new EventEmitter();
+  @Output() onChange = new EventEmitter<SocialMediaLinks>();
 
   internalModel: SocialMediaLinks = new SocialMediaLinks();
 
