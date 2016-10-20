@@ -11,15 +11,14 @@ import { BlogPost } from '../../core/interfaces/blog-post';
 })
 export class BlogPostPageComponent implements OnInit {
 
-  post: BlogPost;
+  post: BlogPost = new BlogPost();
 
   constructor(private blogService: BlogService,
               private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit() {
-    //
-    this.route.params.forEach((params: Params) => {
+   this.route.params.forEach((params: Params) => {
      let id = params['id'];
      this.blogService.getBlogById(id).then(post => this.post = post);
    });

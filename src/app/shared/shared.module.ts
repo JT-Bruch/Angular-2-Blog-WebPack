@@ -24,6 +24,7 @@ import { SearchSiteComponent }  from './search-site/search-site.component';
 import { AdminSocialInputComponent } from './admin-social-input/admin-social-input.component';
 import { AdminDebugComponent } from './admin-debug/admin-debug.component';
 import { TinyMceComponent } from './tiny-mce/tiny-mce.component';
+import { BlogPostComponent } from './blog-post/blog-post.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { TinyMceComponent } from './tiny-mce/tiny-mce.component';
                   HtmlEditorDirective,
                   AdminSocialInputComponent,
                   AdminDebugComponent,
-                  TinyMceComponent
+                  TinyMceComponent,
+                  BlogPostComponent
 
   ],
   exports: [
@@ -70,6 +72,7 @@ import { TinyMceComponent } from './tiny-mce/tiny-mce.component';
             AdminDebugComponent,
             HtmlEditorDirective,
             TinyMceComponent,
+            BlogPostComponent,
             CommonModule,
             FormsModule
   ]

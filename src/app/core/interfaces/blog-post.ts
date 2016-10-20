@@ -15,8 +15,31 @@ export interface BlogPost {
   categories: FCatKey;
   modDateObj?: Date;
   createDateObj?: Date;
+}
+
+export class BlogPost implements BlogPost {
+  constructor() {
+    this.$key = '';
+    this.imageUrl = '';
+    this.author = '';
+    this.modDate = new Date().toDateString();
+    this.createDate = new Date().toDateString();
+    this.displayOrder = 0;
+    this.viewCount = 0;
+    this.title = '';
+    this.description = '';
+    this.likeCount = 0;
+    this.commentCount = 0;
+    this.articleContent = '';
+    this.linkUrl = '';
+    this.modDateObj = new Date();
+    this.createDateObj = new Date();
+
+  }
 
 }
+
+
 
 export interface FCatKey {
   [key: string]: boolean;
