@@ -1,32 +1,39 @@
-<article class="single-blog-post post-style-1">
-  <div class="post-thumbnail">
-    <a href="#"><img src="https://placehold.it/720x250" alt="img" class="img-responsive"></a>
-  </div>
-  <div class="post-meta-data">
+<div class="main-content single-page-post">
+  <article class="single-blog-post">
+    <div class="author-img"></div>
     <div>
-      <span class="post-author"><a href="#">{{'blogPreview.byAuthorLabel' | translate:{author: blog.author} }}</a></span>
-      <span class="post-time"><i class="fa fa-clock-o"></i> {{blog.modDate | date:'longDate'}}</span>
-      <span class="last-view"><i class="fa fa-eye"></i> {{blog.viewCount}} {{'blogPreview.viewCountLabel' | translate}}</span>
+      <div class="post-thumbnail">
+        <a href="#"><img src="https://placehold.it/720x250" alt="img" class="img-responsive"></a>
+      </div>
+      <div class="post-meta-data">
+        <div>
+          <span class="post-author"><a href="#">{{'blogPreview.byAuthorLabel' | translate:{author: blog.author} }}</a></span>
+          <span class="post-time"><i class="fa fa-clock-o"></i> {{blog.modDate | date:'longDate'}}</span>
+          <span class="last-view"><i class="fa fa-eye"></i> {{blog.viewCount}} {{'blogPreview.viewCountLabel' | translate}}</span>
+        </div>
+      </div>
+      <div class="post-comments-meta">
+        <span class="post-impress"><i class="fa fa-heart-o"></i> {{blog.viewCount}}</span>
+        <span class="comments-no">{{blog.commentCount}} {{'blogPreview.commentsLabel' | translate}} </span>
+      </div>
+      <div class="share-social-icon">
+        <ul>
+          <li><a href="{{blog.linkUrl}}"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="{{blog.linkUrl}}"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="{{blog.linkUrl}}"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="{{blog.linkUrl}}"><i class="fa fa-google-plus"></i></a></li>
+        </ul>
+      </div>
+      <div class="post-title">
+        <h2><a href="{{blog.linkUrl}}">{{blog.title}}</a></h2>
+      </div>
+      <div class="post-entry" [innerHTML]="blog.articleContent">
+      </div>
     </div>
-  </div>
-  <div class="share-social-icon">
-    <ul>
-      <li><a href="{{blog.linkUrl}}"><i class="fa fa-facebook"></i></a></li>
-      <li><a href="{{blog.linkUrl}}"><i class="fa fa-twitter"></i></a></li>
-      <li><a href="{{blog.linkUrl}}"><i class="fa fa-linkedin"></i></a></li>
-      <li><a href="{{blog.linkUrl}}"><i class="fa fa-google-plus"></i></a></li>
-    </ul>
-  </div>
-  <div class="post-title">
-    <h2><a href="{{blog.linkUrl}}">{{blog.title}}</a></h2>
-  </div>
-  <div class="post-entry">
-  </div>
-  <div class="post-comments-meta">
-    <span class="post-impress"><i class="fa fa-heart-o"></i> {{blog.viewCount}}</span>
-    <span class="comments-no">{{blog.commentCount}} {{'blogPreview.commentsLabel' | translate}} </span>
-  </div>
-  <div class="blog-btn" (click)="blogPreviewClicked()">
-    <a class="btn btn-one">{{'blogPreview.readMoreLabelUppercase' | translate}} <i class="fa fa-long-arrow-right"></i></a>
-  </div>
+
 </article>
+
+</div>
+
+
+

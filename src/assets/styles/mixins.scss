@@ -23,3 +23,18 @@
     @extend .#{$class};
   }
 }
+
+@mixin transition($time) {
+	-webkit-transition: $time;
+	-o-transition: $time;
+	transition: $time;
+}
+@mixin background-opacity($color, $opacity: 0.35) {
+    background: rgba($color, $opacity);
+}
+@mixin color-opacity($color, $opacity: 0.35) {
+    color: rgba($color, $opacity);
+}
+@mixin border-property($size, $style, $color, $opacity: 1.0) {
+	border: $size $style rgba($color, $opacity);
+}
