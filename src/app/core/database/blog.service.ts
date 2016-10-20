@@ -52,6 +52,15 @@ export class BlogService {
     return this.blogs$.update(blog.$key, changes);
   }
 
+  getBlogById(id: string): Promise<BlogPost> {
+    let retVal = firebase.database().ref(this.constService.blogRoute + id);
+
+    return  Promise.resolve(retVal.once('value').then(function(snapshot) {
+      let blogPost: BlogPost = snapshot.val();
+      return blogPost;
+    }));
+  }
+
   createFakeBlogPost(): BlogPost {
 
     return {
