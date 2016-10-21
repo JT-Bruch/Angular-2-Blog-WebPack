@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params, NavigationEnd } from '@angular/router';
 
 import { BlogService } from '../../core/database/blog.service';
 import { BlogPost } from '../../core/interfaces/blog-post';
@@ -22,6 +22,11 @@ export class BlogPostPageComponent implements OnInit {
      let id = params['id'];
      this.blogService.getBlogById(id).then(post => this.post = post);
    });
+
+    this.router.events.filter(event => event instanceof NavigationEnd).subscribe(event => {
+        window.scroll(0, 0);
+    });
+
   }
 
 }

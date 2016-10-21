@@ -4,7 +4,12 @@
 <button routerLink="/createarticle">Go To Create Article</button>
 <button routerLink="/admin">Go To Admin</button>
 <button (click)="toggleAuth()">Toggle Auth</button>
-<div>{{authService.isAuth}}</div>
+<div>{{authService.canActivate()}}</div>
+<div>
+  <div> {{ (af.auth | async)?.uid }} </div>
+  <button (click)="loginGitHub()">Login</button>
+  <button (click)="logoutGitHub()">Logout</button>
+</div>
 
 <div>
   <md-list>

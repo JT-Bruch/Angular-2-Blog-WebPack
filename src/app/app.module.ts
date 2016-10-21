@@ -6,7 +6,8 @@ import { FormsModule }    from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 
 import { AngularFireModule } from 'angularfire2';
-import { firebaseConfig as FireBaseConfig } from '../environments/firebase';
+import { firebaseConfig as FireBaseConfig,
+         firebaseAuthConfig as FirebaseAuthConfig } from '../environments/firebase';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent }       from './app.component';
@@ -42,7 +43,7 @@ export function createTranslateLoader(http: Http) {
           useFactory: (createTranslateLoader),
           deps: [Http]
         }),
-    AngularFireModule.initializeApp(FireBaseConfig),
+    AngularFireModule.initializeApp(FireBaseConfig, FirebaseAuthConfig),
     routing,
     CoreModule,
     SharedModule,
