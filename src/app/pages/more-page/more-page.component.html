@@ -5,6 +5,7 @@
 <button routerLink="/admin">Go To Admin</button>
 <button (click)="toggleAuth()">Toggle Auth</button>
 <div>{{authService.canActivate()}}</div>
+<div>{{authService.getDisplayName()}}</div>
 <div>
   <div> {{ (af.auth | async)?.uid }} </div>
   <button (click)="loginGitHub()">Login</button>
