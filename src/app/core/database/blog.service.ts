@@ -55,10 +55,23 @@ export class BlogService {
   getBlogById(id: string): Promise<BlogPost> {
     let retVal = firebase.database().ref(this.constService.blogRoute + id);
 
-    return  Promise.resolve(retVal.once('value').then(function(snapshot) {
+    return  Promise.resolve(retVal.once('value').then( (snapshot: firebase.database.DataSnapshot) => {
       let blogPost: BlogPost = snapshot.val();
+      this.addView(snapshot.ref);
       return blogPost;
     }));
+  }
+
+  addView(blogRef: firebase.database.Reference) {
+    blogRef.transaction(function(blog: BlogPost) {
+      if (blog) {
+        blog.viewCount++;
+          if (!blog.viewCount) {
+            blog.viewCount = 1;
+          }
+      }
+      return blog;
+    });
   }
 
   createFakeBlogPost(): BlogPost {
