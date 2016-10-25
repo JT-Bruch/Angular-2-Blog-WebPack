@@ -48,7 +48,7 @@ export class BlogService {
     return this.blogs$.remove(blog.$key);
   }
 
-  updateBlog(blog: BlogPost, changes: any): firebase.Promise<any> {
+  updateBlog(blog: BlogPost, changes: BlogPost): firebase.Promise<any> {
     return this.blogs$.update(blog.$key, changes);
   }
 
