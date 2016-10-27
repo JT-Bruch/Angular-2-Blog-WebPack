@@ -4,6 +4,11 @@ import { NgModule }           from '@angular/core';
 import { CommonModule }       from '@angular/common';
 import { FormsModule }        from '@angular/forms';
 
+
+import { AngularFireModule } from 'angularfire2';
+import { firebaseConfig as FireBaseConfig,
+         firebaseAuthConfig as FirebaseAuthConfig } from './../../environments/firebase';
+
 import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { SharedModule } from '../shared/shared.module';
 
@@ -25,6 +30,7 @@ import { AuthGuardService } from './auth/auth-guard.service';
       CommonModule,
       FormsModule,
       TranslateModule,
+      AngularFireModule.initializeApp(FireBaseConfig, FirebaseAuthConfig),
       SharedModule
   ],
   declarations: [

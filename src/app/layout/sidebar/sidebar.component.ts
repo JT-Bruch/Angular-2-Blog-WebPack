@@ -24,7 +24,7 @@ export class SidebarComponent implements OnInit {
              private constService: ConstService) { }
 
   ngOnInit() {
-    this.loadCategoryList();
+    // this.loadCategoryList();
   }
 
 
