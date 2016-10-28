@@ -3,7 +3,7 @@
   <!-- WIDGET SEARCH -->
   <app-search-site></app-search-site>
   <!-- WIDGET CATEGORY -->
-  <app-article-categories [blogCategoryList]="categoryList"></app-article-categories>
+  <app-article-categories (onCategoryClicked)="filterCategories($event)" [blogCategoryList]="categoryList | async"></app-article-categories>
   <!-- WIDGET RECENT ARTICLES -->
   <app-recent-articles></app-recent-articles>
     <!-- WIDGET RECENT POST -->

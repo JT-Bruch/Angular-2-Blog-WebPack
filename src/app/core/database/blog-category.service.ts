@@ -24,6 +24,10 @@ export class BlogCategoryService {
     this.categories$ = af.database.list(constSvc.categoryRoute, { query: {
       orderByChild: 'name'
     }});
+
+    this.categoriesObj$ = af.database.object(constSvc.categoryRoute, { query: {
+      orderByChild: 'name'
+    }});
   }
 
 

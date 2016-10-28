@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs/Observable';
 
 import { ConstService } from '../../core/utility/const.service';
-
-
 import { BlogCategory } from '../../core/interfaces/blog-category';
 import { BlogCategoryService } from '../../core/database/blog-category.service';
-
-
-
 
 @Component({
 
@@ -18,25 +14,18 @@ import { BlogCategoryService } from '../../core/database/blog-category.service';
 })
 export class SidebarComponent implements OnInit {
 
-  categoryList: BlogCategory[] = [];
+  categoryList: Observable<BlogCategory[]>;
 
   constructor(public blogCategoryService: BlogCategoryService,
              private constService: ConstService) { }
 
   ngOnInit() {
-    // this.loadCategoryList();
+    this.categoryList = this.blogCategoryService.categories$;
   }
 
-
-  loadCategoryList(): void {
-    this.blogCategoryService.getCategoriesByName(this.constService.maxCatToShow).then(val => {
-       val.forEach(element => {
-         this.categoryList.push(element);
-       });
-    });
+  filterCategories($event: BlogCategory) {
+    console.log($event);
   }
-
-
 
 
 }

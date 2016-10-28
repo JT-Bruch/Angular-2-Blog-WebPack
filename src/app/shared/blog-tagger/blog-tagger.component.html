@@ -2,6 +2,6 @@
      <tag-input [(ngModel)]='nameList' [placeholder]="options.placeholder"
            [autocompleteItems]="taggerAutoCompleteList"
            [autocomplete]="true"
-           (onRemove)="onItemRemoved($event)"
-           (onAdd)="onItemAdded($event)"></tag-input>
+           (onRemove)="tagRemoved($event)"
+           (onAdd)="tagAdded($event)"></tag-input>
   </div>

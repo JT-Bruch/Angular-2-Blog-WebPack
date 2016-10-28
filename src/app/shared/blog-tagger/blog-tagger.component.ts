@@ -9,6 +9,7 @@ export class BlogTaggerComponent implements OnInit {
 
   @Input('taggerAutoCompleteList') taggerAutoCompleteList: string[];
   @Output() onTagAdded = new EventEmitter<string>();
+  @Output() onTagRemoved = new EventEmitter<string>();
 
   options = {
         placeholder: '+ term',
@@ -19,11 +20,10 @@ export class BlogTaggerComponent implements OnInit {
   ngOnInit() {
   }
 
-  onItemAdded(item) {
-      console.log(`${item} has been added`);
+  tagAdded(item) {
       this.onTagAdded.emit(item);
   }
-  onItemRemoved(item) {
+  tagRemoved(item) {
       console.log(`${item} has been removed :(`);
   }
 
