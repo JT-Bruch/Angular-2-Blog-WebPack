@@ -1,84 +1,41 @@
+import { ConstService } from './../utility/const.service';
+import { AuthService } from './auth.service';
 import { Injectable } from '@angular/core';
-import { CanActivate }    from '@angular/router';
+import {
+  CanActivate, Router,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot
+} from '@angular/router';
 
 import { TranslateService } from 'ng2-translate/ng2-translate';
-import { AngularFire, AuthProviders, AuthMethods, FirebaseAuthState } from 'angularfire2';
+import { AngularFire } from 'angularfire2';
 
 @Injectable()
 export class AuthGuardService implements CanActivate {
 
-  isAuth: boolean = true;
-  firebaseAuthState: FirebaseAuthState = null;
-  notLoggedIn: string;
-
   constructor(private af: AngularFire,
-              private translate: TranslateService) {
-    this.af.auth.subscribe(user => {
-      if (user) {
-        // user logged in
-        this.firebaseAuthState = user;
-      } else {
-        // user not logged in
-        this.firebaseAuthState = null;
-      }
-    });
-
-    this.translate.get('auth.notLoggedIn').subscribe((translationObj) => { this.notLoggedIn = translationObj; });
+              private translate: TranslateService,
+              private router: Router,
+              private authService: AuthService,
+              private constService: ConstService) {
   }
 
-  canActivate() {
-    return this.firebaseAuthState != null;
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    let url: string = state.url;
+
+    return this.checkLogin(url);
   }
 
-  getDisplayName() {
-    return this.firebaseAuthState ? this.firebaseAuthState.auth.displayName : this.notLoggedIn;
-  }
+  checkLogin(url: string): boolean {
+    if (this.authService.isLoggedIn) { return true; }
 
-  logout() {
-    this.af.auth.logout();
-  }
+    // Store the attempted URL for redirecting
+    this.authService.redirectUrl = url;
 
-  loginGitHub() {
-    // Social provider popup
-    this.af.auth.login({
-      provider: AuthProviders.Github,
-      method: AuthMethods.Popup,
-    });
+    // Navigate to the login page with extras
+    this.router.navigate([this.constService.loginRoute]);
+    return false;
   }
-
-  logoutGitHub() {
-     this.logout();
-  }
-
-  loginGoogle() {
-    // Social provider popup
-    this.af.auth.login({
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup,
-    });
-  }
-
-  logoutGoogle() {
-     this.logout();
-  }
-
-  loginStandard(email: string, password: string) {
-    // Standard Email
-    this.af.auth.login(
-      {
-        email,
-        password
-      },
-      {
-      provider: AuthProviders.Password,
-      method: AuthMethods.Password,
-    });
-  }
-
-  logoutStandard() {
-     this.logout();
-  }
-
 
 }
 

@@ -1,5 +1,4 @@
 import { FirebaseListObservable } from 'angularfire2';
-import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 
 import { BlogCategory } from '../../core/interfaces/blog-category';

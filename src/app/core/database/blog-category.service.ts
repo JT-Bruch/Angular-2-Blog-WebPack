@@ -1,10 +1,7 @@
-
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
-
-
-import { BlogCategory, FBlogKey } from '../interfaces/blog-category';
+import { BlogCategory } from '../interfaces/blog-category';
 import { ConstService } from '../utility/const.service';
 import { RandomService } from '../utility/random.service';
 
@@ -48,6 +45,7 @@ export class BlogCategoryService {
       blogs: {
       }
     };
+    console.log(newCat);
     this.categories$.push(newCat);
   }
 

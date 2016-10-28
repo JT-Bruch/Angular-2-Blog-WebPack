@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { AuthGuardService } from './../../core/auth/auth-guard.service';
+import { AuthService } from './../../core/auth/auth.service';
 import { GlobalLinkService } from './../../core/database/global-link.service';
 import { SocialMediaLinks } from './../../core/interfaces/social-media-links';
 
@@ -15,7 +15,7 @@ export class AdminPageComponent implements OnInit {
 
   socialMedia: Observable<SocialMediaLinks>;
 
-  constructor(private authService: AuthGuardService,
+  constructor(private authService: AuthService,
              private linkService: GlobalLinkService) { }
 
   ngOnInit() {
@@ -23,12 +23,11 @@ export class AdminPageComponent implements OnInit {
   }
 
   toggleAuth() {
-    this.authService.isAuth = !this.authService.isAuth;
+    this.authService.isLoggedIn = !this.authService.isLoggedIn;
   }
 
   updateSocialMedia(updatedMedia: SocialMediaLinks) {
     this.linkService.addSocialMedia(updatedMedia);
-
   }
 
 }

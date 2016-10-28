@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../../core/auth/auth.service';
 import { AuthGuardService } from './../../core/auth/auth-guard.service';
 import { TranslateService } from 'ng2-translate/ng2-translate';
 
@@ -11,7 +12,8 @@ import { AngularFire } from 'angularfire2';
 })
 export class MorePageComponent implements OnInit {
 
-  constructor(private authService: AuthGuardService,
+  constructor(private authService: AuthService,
+              private authGuardService: AuthGuardService,
               private translate: TranslateService,
               private af: AngularFire) { }
 
@@ -19,7 +21,7 @@ export class MorePageComponent implements OnInit {
   }
 
   toggleAuth() {
-    this.authService.isAuth = !this.authService.isAuth;
+    this.authService.isLoggedIn = !this.authService.isLoggedIn;
   }
 
   toggleLang(langToUse: string) {
