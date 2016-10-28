@@ -17,6 +17,9 @@
         "upcomingNewsInfo": "Upcoming News",
         "meetUpInfo": "Meet-Ups"
     },
+    "auth": {
+        "notLoggedIn": "Not Logged In"
+    },
     "adminPage": {
         "title": "Administration",
         "testingTitle": "Testing Section"
