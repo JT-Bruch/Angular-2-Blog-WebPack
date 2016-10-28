@@ -1,8 +1,6 @@
-import { FirebaseListObservable } from 'angularfire2';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { BlogCategory } from '../../core/interfaces/blog-category';
 import { BlogPost } from '../../core/interfaces/blog-post';
 
 import { BlogService } from '../../core/database/blog.service';

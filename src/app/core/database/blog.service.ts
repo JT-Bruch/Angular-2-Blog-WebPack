@@ -2,8 +2,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
-import { Observable } from 'rxjs/Observable';
-
 import { BlogPost, FCatKey } from '../interfaces/blog-post';
 import { ConstService } from '../utility/const.service';
 import { RandomService } from '../utility/random.service';
