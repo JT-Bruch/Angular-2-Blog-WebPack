@@ -1,7 +1,7 @@
 export interface BlogCategory {
   $key?: string;
   name: string;
-  createDate: string;
+  createDate: number;
   count?: number;
   blogs: FBlogKey;
 }

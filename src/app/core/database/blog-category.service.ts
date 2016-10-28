@@ -41,11 +41,11 @@ export class BlogCategoryService {
   addBlogCategory(val: string): void {
     let newCat: BlogCategory = {
       name: val,
-      createDate: firebase.database.ServerValue.TIMESTAMP,
+      createDate: Date.now(),
       blogs: {
       }
     };
-    console.log(newCat);
+    console.warn('This is a major issue, remember to come back and make it server time. firebase.database.ServerValue.TIMESTAMP');
     this.categories$.push(newCat);
   }
 

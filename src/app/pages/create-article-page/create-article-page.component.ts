@@ -1,5 +1,6 @@
 import { FirebaseListObservable } from 'angularfire2';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 
 import { BlogCategory } from '../../core/interfaces/blog-category';
 import { BlogPost } from '../../core/interfaces/blog-post';
@@ -15,9 +16,9 @@ import { BlogArticle } from '../../shared/blog-creator/blog-creator.component';
   templateUrl: './create-article-page.component.html',
   styleUrls: ['./create-article-page.component.scss']
 })
-export class CreateArticlePageComponent implements OnInit {
+export class CreateArticlePageComponent implements OnInit, OnDestroy {
 
-  existingBlogCategories: FirebaseListObservable<BlogCategory[]>;
+  blogCatSubscription: Subscription;
   autoCompleteTagList: string[] = [];
 
   constructor(public blogService: BlogService,
@@ -28,12 +29,26 @@ export class CreateArticlePageComponent implements OnInit {
     this.loadAutoCompleteTagList();
   }
 
+  ngOnDestroy() {
+    this.blogCatSubscription.unsubscribe();
+  }
+
   loadAutoCompleteTagList(): void {
-    this.blogCategoryService.getCategorySnapshot().subscribe(snapshots => {
-      snapshots.forEach(snapshot => {
-        this.autoCompleteTagList.push(snapshot.val().name);
-      });
-    });
+
+    this.blogCatSubscription = this.blogCategoryService.getCategorySnapshot().subscribe(
+      snapshots => {
+        this.autoCompleteTagList = [];
+        snapshots.forEach(snapshot => {
+          this.autoCompleteTagList.push(snapshot.val().name);
+        });
+      },
+      error => {
+        console.log('loadAutoCompleteTagList: error');
+      },
+      () => {
+        console.log('loadAutoCompleteTagList: complete');
+      }
+    );
   }
 
   addStory(article: BlogArticle): void {
@@ -48,6 +63,7 @@ export class CreateArticlePageComponent implements OnInit {
   }
 
   tagAdded(val: string): void {
+
     if (this.autoCompleteTagList.indexOf(val)) {
       this.blogCategoryService.addBlogCategory(val);
     }
