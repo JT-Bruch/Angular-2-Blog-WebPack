@@ -1,9 +1,8 @@
 
 import { Injectable } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 import { Observable } from 'rxjs/Observable';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
 
 import { BlogPost, FCatKey } from '../interfaces/blog-post';
 import { ConstService } from '../utility/const.service';
@@ -12,33 +11,24 @@ import { RandomService } from '../utility/random.service';
 @Injectable()
 export class BlogService {
 
-  visibleBlogs$: Observable<BlogPost[]>;
-
-
   public blogs$: FirebaseListObservable<BlogPost[]>;
+  public blogsObj$: FirebaseObjectObservable<BlogPost[]>;
 
-  private filter$: ReplaySubject<any> = new ReplaySubject(1);
-  private filteredBlogs$: FirebaseListObservable<BlogPost[]>;
-
-  constructor(af: AngularFire,
+  constructor(private af: AngularFire,
               private randomService: RandomService,
               private constService: ConstService) {
-    const path = `/blogs/`;
-    this.blogs$ = af.database.list(path, { query: {
+
+    this.blogs$ = af.database.list(this.constService.blogRoute, { query: {
       orderByChild: 'displayOrder',
       limitToFirst: constService.maxBlogPosts
     }});
 
-    this.filteredBlogs$ = af.database.list(path, {query: {
-      orderByChild: 'modDate',
-      equalTo: this.filter$
+    this.blogsObj$ = af.database.object(this.constService.blogRoute, { query: {
+      orderByChild: 'displayOrder',
+      limitToFirst: constService.maxBlogPosts
     }});
 
-
   }
-
-
-
 
   createBlog(blog: BlogPost): firebase.Promise<any> {
     return firebase.database().ref(this.constService.blogRoute).push(blog);
@@ -52,14 +42,12 @@ export class BlogService {
     return this.blogs$.update(blog.$key, changes);
   }
 
-  getBlogById(id: string): Promise<BlogPost> {
-    let retVal = firebase.database().ref(this.constService.blogRoute + id);
+  getBlog(id: string): FirebaseObjectObservable<BlogPost> {
+    return this.af.database.object(this.constService.blogRoute + id);
+  }
 
-    return  Promise.resolve(retVal.once('value').then( (snapshot: firebase.database.DataSnapshot) => {
-      let blogPost: BlogPost = snapshot.val();
-      this.addView(snapshot.ref);
-      return blogPost;
-    }));
+  addViewForBlog(id): void {
+    // this.blogs$.update(id, )
   }
 
   addView(blogRef: firebase.database.Reference) {

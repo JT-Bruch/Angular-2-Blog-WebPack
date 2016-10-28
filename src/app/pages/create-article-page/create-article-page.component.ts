@@ -1,3 +1,5 @@
+import { FirebaseListObservable } from 'angularfire2';
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 
 import { BlogCategory } from '../../core/interfaces/blog-category';
@@ -16,37 +18,32 @@ import { BlogArticle } from '../../shared/blog-creator/blog-creator.component';
 })
 export class CreateArticlePageComponent implements OnInit {
 
-  existingBlogCategories: BlogCategory[];
+  existingBlogCategories: FirebaseListObservable<BlogCategory[]>;
   autoCompleteTagList: string[] = [];
 
   constructor(public blogService: BlogService,
               public blogCategoryService: BlogCategoryService,
               private randomService: RandomService) { }
 
-
-
   ngOnInit() {
     this.loadAutoCompleteTagList();
   }
 
   loadAutoCompleteTagList(): void {
-    this.blogCategoryService.getCategoriesByName().then(val => {
-       val.forEach(element => {
-         this.autoCompleteTagList.push(element.name);
-       });
+    this.blogCategoryService.getCategorySnapshot().subscribe(snapshots => {
+      snapshots.forEach(snapshot => {
+        this.autoCompleteTagList.push(snapshot.val().name);
+      });
     });
   }
 
   addStory(article: BlogArticle): void {
-
 
     let testPost: BlogPost = this.blogService.createFakeBlogPost();
     testPost.title = article.title;
     testPost.author = article.author;
     testPost.description = article.description;
     testPost.articleContent = article.html;
-
-
 
     this.blogService.createBlog(testPost);
   }

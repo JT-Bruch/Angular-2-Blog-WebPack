@@ -9,7 +9,6 @@ import { HtmlEditorDirective }  from './html-editor/html-editor.directive';
 import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { TagInputModule } from 'ng2-tag-input';
 import { MaterialModule } from '@angular/material';
-import { AngularFireModule } from 'angularfire2';
 
 import { SocialMediaListComponent }  from './social-media-list/social-media-list.component';
 import { BlogCreatorComponent }  from './blog-creator/blog-creator.component';
@@ -34,7 +33,6 @@ import { BlogPostComponent } from './blog-post/blog-post.component';
             TranslateModule,
             FormsModule,
             TagInputModule,
-            AngularFireModule,
             MaterialModule
   ],
   declarations: [

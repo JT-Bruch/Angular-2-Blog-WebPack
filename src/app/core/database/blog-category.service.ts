@@ -37,24 +37,8 @@ export class BlogCategoryService {
     return this.categories$.push(blogCat);
   }
 
-  getCategories(): firebase.Promise<any> {
-    return firebase.database().ref(this.constSvc.categoryRoute).once('value');
-  }
-
-  getCategoriesByName(maxRows = 0): Promise<BlogCategory[]> {
-    let retVal = firebase.database().ref(this.constSvc.categoryRoute);
-    if (maxRows > 0) {
-      retVal.limitToLast(maxRows);
-    }
-    return  Promise.resolve(retVal.once('value').then(function(snapshot) {
-      let catList: BlogCategory[] = [];
-      snapshot.forEach(function(childSnapshot) {
-        let childData: BlogCategory = childSnapshot.val();
-        childData.count = Object.keys(childData.blogs).length;
-        catList.push(childData);
-      });
-      return catList.sort((a, b) => b.count - a.count);
-    }));
+  getCategorySnapshot()  {
+    return this.af.database.list(this.constSvc.categoryRoute, { preserveSnapshot: true});
   }
 
   addBlogCategory(val: string): void {
@@ -62,16 +46,9 @@ export class BlogCategoryService {
       name: val,
       createDate: firebase.database.ServerValue.TIMESTAMP,
       blogs: {
-        '-KSbXFL6EBpBqT2mben3': true,
-        '-KSbXFNgp7wQs_Hiu-nN': true
       }
     };
-    firebase.database().ref(this.constSvc.categoryRoute).push(newCat);
-  }
-
-  addBlogToCategory(blogCat: BlogCategory, blogKey: FBlogKey): firebase.Promise<any> {
-    blogCat.blogs = blogKey;
-    return firebase.database().ref(this.constSvc.categoryRoute).set(blogCat);
+    this.categories$.push(newCat);
   }
 
   removeBlogCategory(blogCat: BlogCategory): firebase.Promise<any> {
