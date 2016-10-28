@@ -4,7 +4,7 @@
     </div>
     <ul *ngFor="let cat of blogCategoryList; let i = index">
       <li class="cat-item" (click)="categoryClicked(cat)">
-        <a>{{cat.name}} <span *ngIf="cat.blogs != {}"> ({{getNumBlogs(cat)}})</span>
+        <a>{{cat.name}} <span *ngIf="cat.blogs != null"> ({{getNumBlogs(cat)}})</span>
         </a>
       </li>
     </ul>
