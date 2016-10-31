@@ -32,7 +32,7 @@ export class HomePageComponent implements OnInit {
 
   blogList: Observable<BlogPost[]>;
 
-  constructor(public blogService: BlogService,
+  constructor(private blogService: BlogService,
               private router: Router) { }
 
   ngOnInit() {

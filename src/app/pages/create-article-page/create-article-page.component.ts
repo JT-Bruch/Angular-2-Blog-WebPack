@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 import { BlogPost } from '../../core/interfaces/blog-post';
@@ -21,7 +22,8 @@ export class CreateArticlePageComponent implements OnInit, OnDestroy {
 
   constructor(public blogService: BlogService,
               public blogCategoryService: BlogCategoryService,
-              private randomService: RandomService) { }
+              private randomService: RandomService,
+              private router: Router) { }
 
   ngOnInit() {
     this.loadAutoCompleteTagList();
@@ -57,12 +59,22 @@ export class CreateArticlePageComponent implements OnInit, OnDestroy {
     testPost.description = article.description;
     testPost.articleContent = article.html;
 
-    this.blogService.createBlog(testPost);
+    this.blogService.createBlog(testPost).then((submittedArticle: firebase.database.ThenableReference) => {
+      this.openBlogPage(submittedArticle.key);
+    });
+
+
+  }
+
+  openBlogPage(blogKey: string) {
+    this.router.navigate(['/blogpost', blogKey]);
   }
 
   tagAdded(val: string): void {
 
-    if (this.autoCompleteTagList.indexOf(val)) {
+    if (this.autoCompleteTagList.indexOf(val) === -1) {
+      console.log(val);
+      console.log(this.autoCompleteTagList);
       this.blogCategoryService.addBlogCategory(val);
     }
   }

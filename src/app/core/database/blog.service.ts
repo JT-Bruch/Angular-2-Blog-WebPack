@@ -28,8 +28,8 @@ export class BlogService {
 
   }
 
-  createBlog(blog: BlogPost): firebase.Promise<any> {
-    return firebase.database().ref(this.constService.blogRoute).push(blog);
+  createBlog(blog: BlogPost): firebase.database.ThenableReference {
+    return this.blogs$.push(blog);
   }
 
   removeBlog(blog: BlogPost): firebase.Promise<any> {
@@ -61,12 +61,13 @@ export class BlogService {
   }
 
   createFakeBlogPost(): BlogPost {
+    console.warn('This is a major issue, remember to come back and make it server time. firebase.database.ServerValue.TIMESTAMP');
 
     return {
         imageUrl: this.randomService.getRandomPhoto(720, 240),
         author: this.randomService.getRandomName(),
         modDate: this.randomService.getRandomDate().toISOString(),
-        createDate: firebase.database.ServerValue.TIMESTAMP,
+        createDate: Date.now().toString(),
         displayOrder: this.randomService.getRandomInt(1, 10),
         viewCount: this.randomService.getRandomInt(1, 1000),
         title: this.randomService.getRandomSentence(),
