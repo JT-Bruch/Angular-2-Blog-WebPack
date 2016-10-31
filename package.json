@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~2.1.0",
     "@angular/router": "~3.1.0",
     "angularfire2": "^2.0.0-beta.5",
+    "angulartics2": "^1.1.12",
     "bootstrap": "^3.3.7",
     "chance": "^1.0.4",
     "core-js": "^2.4.1",

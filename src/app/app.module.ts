@@ -10,11 +10,14 @@ import { firebaseConfig as FireBaseConfig,
          firebaseAuthConfig as FirebaseAuthConfig } from '../environments/firebase';
 import { MaterialModule } from '@angular/material';
 
+import { CollapseModule } from 'ng2-bootstrap/components/collapse';
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
+
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/src/providers/angulartics2-ga';
+
 import { AppComponent }       from './app.component';
 import { routing } from './app.routing';
-
-
-import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
@@ -24,7 +27,7 @@ import { HeaderComponent }   from './layout/header/header.component';
 import { FooterComponent }   from './layout/footer/footer.component';
 import { SidebarComponent }   from './layout/sidebar/sidebar.component';
 
-import { CollapseModule } from 'ng2-bootstrap/components/collapse';
+
 
 
 export function createTranslateLoader(http: Http) {
@@ -44,6 +47,7 @@ export function createTranslateLoader(http: Http) {
           deps: [Http]
         }),
     AngularFireModule.initializeApp(FireBaseConfig, FirebaseAuthConfig),
+    Angulartics2Module.forRoot(),
     routing,
     CoreModule,
     SharedModule,
@@ -57,7 +61,8 @@ export function createTranslateLoader(http: Http) {
 
   ],
   providers: [
-    Title
+    Title,
+    Angulartics2GoogleAnalytics
   ],
   bootstrap: [ AppComponent ]
 })
