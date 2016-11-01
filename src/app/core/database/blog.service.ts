@@ -1,5 +1,7 @@
 
 import { Injectable } from '@angular/core';
+
+import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 import { BlogPost, FCatKey } from '../interfaces/blog-post';
@@ -61,13 +63,11 @@ export class BlogService {
   }
 
   createFakeBlogPost(): BlogPost {
-    console.warn('This is a major issue, remember to come back and make it server time. firebase.database.ServerValue.TIMESTAMP');
-
     return {
         imageUrl: this.randomService.getRandomPhoto(720, 240),
         author: this.randomService.getRandomName(),
         modDate: this.randomService.getRandomDate().toISOString(),
-        createDate: Date.now().toString(),
+        createDate: firebase.database.ServerValue.TIMESTAMP,
         displayOrder: this.randomService.getRandomInt(1, 10),
         viewCount: this.randomService.getRandomInt(1, 1000),
         title: this.randomService.getRandomSentence(),

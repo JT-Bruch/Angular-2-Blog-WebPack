@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
+import * as firebase from 'firebase';
 import { BlogPost } from '../../core/interfaces/blog-post';
 
 import { BlogService } from '../../core/database/blog.service';

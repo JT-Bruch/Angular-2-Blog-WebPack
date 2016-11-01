@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+
+import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 import { BlogCategory } from '../interfaces/blog-category';
@@ -41,11 +43,10 @@ export class BlogCategoryService {
   addBlogCategory(val: string): void {
     let newCat: BlogCategory = {
       name: val,
-      createDate: Date.now(),
+      createDate: firebase.database.ServerValue.TIMESTAMP,
       blogs: {
       }
     };
-    console.warn('This is a major issue, remember to come back and make it server time. firebase.database.ServerValue.TIMESTAMP');
     this.categories$.push(newCat);
   }
 
