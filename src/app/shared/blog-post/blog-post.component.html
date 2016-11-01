@@ -25,9 +25,17 @@
         </ul>
       </div>
       <div class="post-title">
-        <h2><a href="{{blog.linkUrl}}">{{blog.title}}</a></h2>
+        <h2><a href="{{blog.linkUrl}}" [contentEditable]="canEditContent">{{blog.title}}</a></h2>
       </div>
-      <div class="post-entry" [innerHTML]="blog.articleContent">
+      <div class="post-entry" [innerHTML]="blog.articleContent" [contentEditable]="canEditContent">
+      </div>
+      <div class="post-edit">
+        <button (click)="onSaveEditedContent()" *ngIf="canEditContent">
+          <span>{{'blogPost.save' | translate}}</span>
+        </button>
+        <button (click)="enableEditContent()" *ngIf="!canEditContent">
+          <span>{{'blogPost.quickEdit' | translate}}</span>
+        </button>
       </div>
     </div>
 

@@ -42,11 +42,15 @@
         "githubColon": "GitHub:",
         "linkedinColon": "LinkedIn:"
     },
-    "blogPreview":{
+    "blogPreview": {
         "viewCountLabel": "views",
         "commentsLabel" : "comments",
         "readMoreLabelUppercase" : "READ MORE",
         "byAuthorLabel": "by {{author}}"
+    },
+    "blogPost": {
+        "quickEdit": "Quick Edit",
+        "save": "Save"
     },
     "footerContactInfo": {
         "personalSlogan": "A developers blog."

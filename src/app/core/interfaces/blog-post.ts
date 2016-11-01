@@ -17,6 +17,12 @@ export interface BlogPost {
   createDateObj?: Date;
 }
 
+export interface EditBlogPost {
+  $key?: string;
+  title: string;
+  articleContent: string;
+}
+
 export class BlogPost implements BlogPost {
   constructor() {
     this.$key = '';

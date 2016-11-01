@@ -3,7 +3,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute, Params, NavigationEnd } from '@angular/router';
 
 import { BlogService } from '../../core/database/blog.service';
-import { BlogPost } from '../../core/interfaces/blog-post';
+import { BlogPost, EditBlogPost } from '../../core/interfaces/blog-post';
 
 @Component({
   selector: 'app-blog-post-page',
@@ -45,6 +45,10 @@ export class BlogPostPageComponent implements OnInit, AfterViewInit {
     this.router.events.filter(event => event instanceof NavigationEnd).subscribe(event => {
      window.scroll(0, 0);
    });
+  }
+
+  blogEdited(editedPost: EditBlogPost) {
+    console.log(editedPost);
   }
 
 }

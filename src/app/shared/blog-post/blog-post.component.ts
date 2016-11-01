@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { BlogPost } from '../../core/interfaces/blog-post';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { BlogPost, EditBlogPost } from '../../core/interfaces/blog-post';
 
 @Component({
   selector: 'app-blog-post',
@@ -9,6 +9,8 @@ import { BlogPost } from '../../core/interfaces/blog-post';
 export class BlogPostComponent implements OnInit {
 
   @Input() blog: BlogPost;
+  @Output() onBlogEdited = new EventEmitter<EditBlogPost>();
+  canEditContent = false;
 
   constructor() {
     this.blog = {
@@ -32,10 +34,19 @@ export class BlogPostComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log(this.blog);
   }
 
+  enableEditContent() {
+    this.canEditContent = !this.canEditContent;
+  }
 
-
+  onSaveEditedContent() {
+    const editedPost: EditBlogPost = {
+      $key: this.blog.$key,
+      title: this.blog.title,
+      articleContent: this.blog.articleContent
+    };
+    this.onBlogEdited.emit(editedPost);
+  }
 
 }
