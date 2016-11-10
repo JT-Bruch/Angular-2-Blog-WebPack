@@ -14,7 +14,7 @@ import { CollapseModule } from 'ng2-bootstrap/components/collapse';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 
 import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/src/providers/angulartics2-ga';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/dist/providers';
 
 import { AppComponent }       from './app.component';
 import { routing } from './app.routing';

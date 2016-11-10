@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import * as firebase from 'firebase';
+// import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 import { BlogCategory } from '../interfaces/blog-category';

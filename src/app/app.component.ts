@@ -3,7 +3,7 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
 import { ActivatedRoute, Route } from '@angular/router';
 import { Title }     from '@angular/platform-browser';
 import { Angulartics2 } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/src/providers/angulartics2-ga';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/dist/providers';
 
 @Component({
 
@@ -17,7 +17,7 @@ export class AppComponent {
   private activeRoute: Route = this.route.routeConfig;
 
 
-  constructor(translate: TranslateService,
+  constructor(private translate: TranslateService,
               private route: ActivatedRoute,
               private titleService: Title,
               private angulartics2: Angulartics2,
