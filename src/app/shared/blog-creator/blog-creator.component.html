@@ -15,7 +15,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <md-input placeholder="{{'createArticle.author' | translate}}" type="text" required="" autofocus [ngModel]="authorInput"></md-input>
+        <md-input placeholder="{{'createArticle.author' | translate}}" type="text" required="" autofocus [disabled]="authorInput != null" [ngModel]="authorInput"></md-input>
       </div>
     </div>
     <app-tiny-mce  [elementId]="'my-editor-id'"  (onEditorKeyup)="keyupOnEditor($event)"></app-tiny-mce>
