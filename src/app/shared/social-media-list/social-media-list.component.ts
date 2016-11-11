@@ -1,18 +1,15 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-
-
 import { SocialMediaLinks } from '../../core/interfaces/social-media-links';
 
 @Component({
 
   selector: 'app-social-media-list',
-  templateUrl: 'social-media-list.component.html',
-  styleUrls: ['social-media-list.component.scss']
+  styleUrls: ['social-media-list.component.scss'],
+  templateUrl: 'social-media-list.component.html'
 })
 export class SocialMediaListComponent implements OnInit, OnChanges {
   @Input() styleToUse: string;
   @Input() socialMediaInput: SocialMediaLinks;
-
 
   internalModel: SocialMediaLinks = new SocialMediaLinks();
 

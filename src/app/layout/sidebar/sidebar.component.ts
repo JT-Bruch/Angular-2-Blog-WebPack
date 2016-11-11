@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Observable } from 'rxjs/Observable';
 
 import { ConstService } from '../../core/utility/const.service';
@@ -7,10 +6,9 @@ import { BlogCategory } from '../../core/interfaces/blog-category';
 import { BlogCategoryService } from '../../core/database/blog-category.service';
 
 @Component({
-
   selector: 'app-sidebar',
-  templateUrl: 'sidebar.component.html',
-  styleUrls: ['sidebar.component.scss']
+  styleUrls: ['sidebar.component.scss'],
+  templateUrl: 'sidebar.component.html'
 })
 export class SidebarComponent implements OnInit {
 
@@ -26,6 +24,4 @@ export class SidebarComponent implements OnInit {
   filterCategories($event: BlogCategory) {
     console.log($event);
   }
-
-
 }

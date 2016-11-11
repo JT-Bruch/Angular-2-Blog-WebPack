@@ -5,18 +5,13 @@ import { AuthGuardService } from './../../core/auth/auth-guard.service';
 import { GlobalLinkService } from './../../core/database/global-link.service';
 import { SocialMediaLinks } from './../../core/interfaces/social-media-links';
 
-
-
 @Component({
-
   selector: 'app-header',
-  templateUrl: 'header.component.html',
   styleUrls: ['header.component.scss'],
-  providers: [],
+  templateUrl: 'header.component.html',
 })
 
 export class HeaderComponent implements OnInit {
-
 
   isCollapsed: boolean = true;
   socialMediaStyle: string = 'header-style';
@@ -29,8 +24,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.socialMedia = this.linkService.socialMedia$;
   }
-
-
 
   public collapsed(event: any): void {
   }
