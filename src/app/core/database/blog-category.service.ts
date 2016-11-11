@@ -7,10 +7,8 @@ import { BlogCategory } from '../interfaces/blog-category';
 import { ConstService } from '../utility/const.service';
 import { RandomService } from '../utility/random.service';
 
-
 @Injectable()
 export class BlogCategoryService {
-
 
   public categories$: FirebaseListObservable<BlogCategory[]>;
 
@@ -29,23 +27,20 @@ export class BlogCategoryService {
     }});
   }
 
-
-
-
   createBlogCategory(blogCat: BlogCategory): firebase.Promise<any> {
     return this.categories$.push(blogCat);
   }
 
-  getCategorySnapshot()  {
-    return this.af.database.list(this.constSvc.categoryRoute, { preserveSnapshot: true});
+  getCategorySnapshot() {
+    return this.af.database.list(this.constSvc.categoryRoute, { preserveSnapshot: true });
   }
 
   addBlogCategory(val: string): void {
     let newCat: BlogCategory = {
-      name: val,
-      createDate: firebase.database.ServerValue.TIMESTAMP,
       blogs: {
-      }
+      },
+      createDate: firebase.database.ServerValue.TIMESTAMP,
+      name: val
     };
     this.categories$.push(newCat);
   }
@@ -57,7 +52,4 @@ export class BlogCategoryService {
   updateBlogCategory(blogCat: BlogCategory, changes: any): firebase.Promise<any> {
     return this.categoriesObj$.update(blogCat);
   }
-
-
-
 }

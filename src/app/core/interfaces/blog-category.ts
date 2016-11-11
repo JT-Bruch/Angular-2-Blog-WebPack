@@ -8,5 +8,4 @@ export interface BlogCategory {
 
 export interface FBlogKey {
   [key: string]: boolean;
-};
-
+}

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
-import { BlogPost, FCatKey } from '../interfaces/blog-post';
+import { BlogPost } from '../interfaces/blog-post';
 import { ConstService } from '../utility/const.service';
 import { RandomService } from '../utility/random.service';
 
@@ -21,13 +21,13 @@ export class BlogService {
               private constService: ConstService) {
 
     this.blogs$ = af.database.list(this.constService.blogRoute, { query: {
-      orderByChild: 'displayOrder',
-      limitToFirst: constService.maxBlogPosts
+      limitToFirst: constService.maxBlogPosts,
+      orderByChild: 'displayOrder'
     }});
 
     this.blogsObj$ = af.database.object(this.constService.blogRoute, { query: {
-      orderByChild: 'displayOrder',
-      limitToFirst: constService.maxBlogPosts
+      limitToFirst: constService.maxBlogPosts,
+      orderByChild: 'displayOrder'
     }});
 
   }
@@ -54,7 +54,7 @@ export class BlogService {
   }
 
   addView(blogRef: firebase.database.Reference) {
-    blogRef.transaction(function(blog: BlogPost) {
+    blogRef.transaction((blog: BlogPost) => {
       if (blog) {
         blog.viewCount++;
           if (!blog.viewCount) {
@@ -67,51 +67,20 @@ export class BlogService {
 
   createFakeBlogPost(): BlogPost {
     return {
-        imageUrl: this.randomService.getRandomPhoto(720, 240),
-        author: this.randomService.getRandomName(),
-        modDate: this.randomService.getRandomDate().toISOString(),
-        createDate: firebase.database.ServerValue.TIMESTAMP,
-        displayOrder: this.randomService.getRandomInt(1, 10),
-        viewCount: this.randomService.getRandomInt(1, 1000),
-        title: this.randomService.getRandomSentence(),
-        description: this.randomService.getRandomParagraph(),
         articleContent: this.randomService.getRandomParagraph(),
-        likeCount: this.randomService.getRandomInt(1, 1000),
+        author: this.randomService.getRandomName(),
+        categories: {},
         commentCount: this.randomService.getRandomInt(1, 20),
+        createDate: firebase.database.ServerValue.TIMESTAMP,
+        description: this.randomService.getRandomParagraph(),
+        displayOrder: this.randomService.getRandomInt(1, 10),
+        imageUrl: this.randomService.getRandomPhoto(720, 240),
+        likeCount: this.randomService.getRandomInt(1, 1000),
         linkUrl: this.randomService.getRandomGoogleUrl(),
-        categories: this.createFakeBlogCategoryKey()
-
+        modDate: this.randomService.getRandomDate().toISOString(),
+        title: this.randomService.getRandomSentence(),
+        viewCount: this.randomService.getRandomInt(1, 1000)
       };
-  }
-
-  createFakeBlogCategoryKey(): FCatKey {
-    let catKey: FCatKey = {};
-    catKey['article'] = true;
-
-
-    if (this.randomService.getRandomBool()) {
-      catKey['fakse'] = true;
-    }
-
-    if (this.randomService.getRandomBool()) {
-      catKey['test'] = true;
-    }
-
-    if (this.randomService.getRandomBool()) {
-      catKey['anotherCat2'] = true;
-    }
-
-    if (this.randomService.getRandomBool()) {
-      catKey['anotherCat1'] = true;
-    }
-
-    if (this.randomService.getRandomBool()) {
-      catKey['anotherCat'] = true;
-    }
-
-
-
-    return catKey;
   }
 
 }

@@ -45,8 +45,6 @@ export class BlogPost implements BlogPost {
 
 }
 
-
-
 export interface FCatKey {
   [key: string]: boolean;
-};
+}

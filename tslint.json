@@ -1,8 +1,16 @@
 {
   "rulesDirectory": [
-    "node_modules/codelyzer"
+    "node_modules/codelyzer",
+    "node_modules/tslint-eslint-rules/dist/rules"
   ],
   "rules": {
+    "brace-style": [
+      true,
+      "1tbs",
+      {
+          "allowSingleLine": true
+      }
+    ],
     "class-name": true,
     "comment-format": [
       true,
@@ -24,6 +32,7 @@
     "member-access": false,
     "member-ordering": [
       true,
+      "public-before-private",
       "static-before-instance",
       "variables-before-functions"
     ],
@@ -38,13 +47,19 @@
       "trace"
     ],
     "no-construct": true,
+    "no-consecutive-blank-lines": true,
     "no-debugger": true,
     "no-duplicate-key": true,
     "no-duplicate-variable": true,
     "no-empty": false,
+    "no-extra-semi": true,
     "no-eval": true,
     "no-inferrable-types": true,
+    "no-multi-spaces": [
+      true
+    ],
     "no-shadowed-variable": true,
+    "no-sparse-arrays": true,
     "no-string-literal": false,
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
@@ -52,8 +67,13 @@
     "no-unused-variable": true,
     "no-unreachable": true,
     "no-use-before-declare": true,
+    "no-unexpected-multiline": true,
     "no-var-keyword": true,
-    "object-literal-sort-keys": false,
+    "object-curly-spacing": [
+      true,
+      "always"
+    ],
+    "object-literal-sort-keys": true,
     "one-line": [
       true,
       "check-open-brace",
@@ -61,6 +81,8 @@
       "check-else",
       "check-whitespace"
     ],
+    "one-variable-per-declaration": [ true, "ignore-for-loop" ],
+    "only-arrow-functions": [ true, "allow-declarations" ],
     "quotemark": [
       true,
       "single"
@@ -69,6 +91,7 @@
     "semicolon": [
       "always"
     ],
+    "switch-default": true,
     "triple-equals": [
       true,
       "allow-null-check"
@@ -81,6 +104,14 @@
         "parameter": "nospace",
         "property-declaration": "nospace",
         "variable-declaration": "nospace"
+      },
+      {
+        "call-signature": "onespace",
+        "index-signature": "onespace",
+        "parameter": "onespace",
+        "property-declaration": "onespace",
+        "variable-declaration": "onespace",
+        "variable-name": [ true, "ban-keywords", "check-format", "allow-leading-underscore" ]
       }
     ],
     "variable-name": false,

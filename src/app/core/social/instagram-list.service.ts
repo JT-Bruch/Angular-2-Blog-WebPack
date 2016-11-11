@@ -1,16 +1,9 @@
 import { Injectable } from '@angular/core';
 import { RandomService } from '../utility/random.service';
-
-export interface InstagramItem {
-  source: string;
-  text: string;
-  link: string;
-}
-
+import { InstagramItem } from './../interfaces/instagram-item';
 
 @Injectable()
 export class InstagramListService {
-
 
   numInstagramItems: number = this.randomService.getRandomInt(2, 5);
 
@@ -27,11 +20,9 @@ export class InstagramListService {
 
   buildInstagramItem(): InstagramItem {
     return {
+        link: 'http://google.com',
         source: 'http://placehold.it/50x50',
-        text: 'This is an image',
-        link: 'http://google.com'
+        text: 'This is an image'
       };
   }
-
-
 }

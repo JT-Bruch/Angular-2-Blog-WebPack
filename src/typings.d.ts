@@ -2,8 +2,10 @@
 // https://github.com/typings/typings
 // https://www.typescriptlang.org/docs/handbook/writing-declaration-files.html
 
-declare var System: any;
+declare let System: any;
 declare namespace firebase.database.ServerValue {
-  var TIMESTAMP: any
+  /* tslint:disable */
+  let TIMESTAMP: any;
+  /* tslint:enable */
 }
-declare var tinymce: any;
+declare let tinymce: any;

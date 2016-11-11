@@ -18,20 +18,6 @@ export class AuthService {
     this.subscribeToLogin();
   }
 
-  private subscribeToLogin() {
-    this.af.auth.subscribe(user => {
-      if (user) {
-        // user logged in
-        this.firebaseAuthState = user;
-        this.isLoggedIn = true;
-      } else {
-        // user not logged in
-        this.firebaseAuthState = null;
-        this.isLoggedIn = false;
-      }
-    });
-  }
-
   getDisplayName() {
     return this.firebaseAuthState ? this.firebaseAuthState.auth.displayName : null;
   }
@@ -44,8 +30,8 @@ export class AuthService {
   loginGitHub() {
     // Social provider popup
     this.af.auth.login({
-      provider: AuthProviders.Github,
       method: AuthMethods.Popup,
+      provider: AuthProviders.Github
     });
   }
 
@@ -56,8 +42,8 @@ export class AuthService {
   loginGoogle() {
     // Social provider popup
     this.af.auth.login({
-      provider: AuthProviders.Google,
       method: AuthMethods.Popup,
+      provider: AuthProviders.Google,
     });
   }
 
@@ -73,13 +59,27 @@ export class AuthService {
         password
       },
       {
-      provider: AuthProviders.Password,
       method: AuthMethods.Password,
+      provider: AuthProviders.Password,
     });
   }
 
   logoutStandard() {
      this.logout();
+  }
+
+  private subscribeToLogin() {
+    this.af.auth.subscribe(user => {
+      if (user) {
+        // user logged in
+        this.firebaseAuthState = user;
+        this.isLoggedIn = true;
+      } else {
+        // user not logged in
+        this.firebaseAuthState = null;
+        this.isLoggedIn = false;
+      }
+    });
   }
 
 }

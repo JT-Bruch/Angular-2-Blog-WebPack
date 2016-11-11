@@ -1,8 +1,8 @@
 import './../rxjs-extensions';
 
-import { NgModule }           from '@angular/core';
-import { CommonModule }       from '@angular/common';
-import { FormsModule }        from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { SharedModule } from '../shared/shared.module';
@@ -19,19 +19,17 @@ import { RandomService } from './utility/random.service';
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
 
-
-
 @NgModule({
+  declarations: [
+
+  ],
+  exports:  [
+  ],
   imports: [
       CommonModule,
       FormsModule,
       TranslateModule,
       SharedModule
-  ],
-  declarations: [
-
-  ],
-  exports:  [
   ],
   providers: [
       GlobalLinkService,

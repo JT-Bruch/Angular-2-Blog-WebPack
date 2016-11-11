@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
-import { adds, async, inject } from '@angular/core/testing';
+import { TestBed, async, inject } from '@angular/core/testing';
 import { GlobalLinkService } from './global-link.service';
 
-describe('Service: GlobalLink', () => {
+describe('Service: GlobalLinkService', () => {
   beforeEach(() => {
-    adds([GlobalLinkService]);
+    TestBed.configureTestingModule({
+      providers: [GlobalLinkService]
+    });
   });
 
-  it('should ...',
-    inject([GlobalLinkService],
-      (service: GlobalLinkService) => {
-        expect(service).toBeTruthy();
-      }));
+  it('should ...', inject([GlobalLinkService], (service: GlobalLinkService) => {
+    expect(service).toBeTruthy();
+  }));
 });

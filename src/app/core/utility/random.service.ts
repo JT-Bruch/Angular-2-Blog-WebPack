@@ -37,12 +37,12 @@ export class RandomService {
 
   getRandomDate(): Date {
     let thisYear = new Date().getFullYear();
-    let date: Date | string = this.chanceService.date({string: false, year: thisYear});
+    let date: Date | string = this.chanceService.date({ string: false, year: thisYear });
     return new Date(date.toString());
   }
 
   getRandomGoogleUrl(): string {
-    return this.chanceService.url({domain: 'www.google.com'});
+    return this.chanceService.url({ domain: 'www.google.com' });
   }
 
 }
