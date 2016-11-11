@@ -1,7 +1,8 @@
+import { AuthService } from './../auth/auth.service';
 
 import { Injectable } from '@angular/core';
 
-// import * as firebase from 'firebase';
+import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 import { BlogPost, FCatKey } from '../interfaces/blog-post';
@@ -16,6 +17,7 @@ export class BlogService {
 
   constructor(private af: AngularFire,
               private randomService: RandomService,
+              private authService: AuthService,
               private constService: ConstService) {
 
     this.blogs$ = af.database.list(this.constService.blogRoute, { query: {
@@ -31,6 +33,7 @@ export class BlogService {
   }
 
   createBlog(blog: BlogPost): firebase.database.ThenableReference {
+    blog.author = this.authService.getDisplayName();
     return this.blogs$.push(blog);
   }
 

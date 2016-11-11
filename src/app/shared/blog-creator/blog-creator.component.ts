@@ -18,13 +18,14 @@ export class BlogCreatorComponent implements OnInit {
   @Output() tagAdded = new EventEmitter<string>();
   @Output() articleSubmitted = new EventEmitter<BlogArticle>();
   @Input() blogCreatorCompleteTagList: string[];
+  @Input() authorInput: string;
   @Input() enablePreview: boolean = false;
 
   story: BlogArticle = {
     title: '',
     html: '',
     description: '',
-    author: ''
+    author: this.authorInput
   };
 
   options = {

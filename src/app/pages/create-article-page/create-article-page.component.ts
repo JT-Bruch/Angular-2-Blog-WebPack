@@ -2,9 +2,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
-// import * as firebase from 'firebase';
 import { BlogPost } from '../../core/interfaces/blog-post';
 
+import { AuthService } from './../../core/auth/auth.service';
 import { BlogService } from '../../core/database/blog.service';
 import { BlogCategoryService } from '../../core/database/blog-category.service';
 import { RandomService } from '../../core/utility/random.service';
@@ -21,10 +21,11 @@ export class CreateArticlePageComponent implements OnInit, OnDestroy {
   blogCatSubscription: Subscription;
   autoCompleteTagList: string[] = [];
 
-  constructor(public blogService: BlogService,
-              public blogCategoryService: BlogCategoryService,
+  constructor(private blogService: BlogService,
+              private blogCategoryService: BlogCategoryService,
               private randomService: RandomService,
-              private router: Router) { }
+              private router: Router,
+              private authService: AuthService) { }
 
   ngOnInit() {
     this.loadAutoCompleteTagList();
