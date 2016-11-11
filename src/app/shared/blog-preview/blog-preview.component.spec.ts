@@ -1,12 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { addProviders, async, inject } from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
 import { BlogPreviewComponent } from './blog-preview.component';
 
-describe('Component: BlogPreview', () => {
+describe('Component: BlogCreatorComponent', () => {
   it('should create an instance', () => {
-    expect(true).toBeTruthy();
+    let component = new BlogPreviewComponent();
+    expect(component).toBeTruthy();
   });
 });

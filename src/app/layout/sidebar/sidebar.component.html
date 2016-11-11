@@ -4,14 +4,12 @@
   <app-search-site></app-search-site>
   <!-- WIDGET CATEGORY -->
   <app-article-categories (onCategoryClicked)="filterCategories($event)" [blogCategoryList]="categoryList | async"></app-article-categories>
-  <!-- WIDGET RECENT ARTICLES
-  <app-recent-articles></app-recent-articles> -->
-  <!-- WIDGET RECENT POST
-  <app-recommended-articles></app-recommended-articles> -->
   <!-- WIDGET ADS -->
-  <app-ad-preview [adWidth]="250" [adHeight]="250"></app-ad-preview>
-  <!-- WIDGET INSTAGRAM -->
-  <app-instagram-preview></app-instagram-preview>
-  <!-- WIDGET FACEBOOK FOLLOW FEED -->
-  <app-facebook-preview></app-facebook-preview>
+  <app-ad-preview [adWidth]="280" [adHeight]="280"></app-ad-preview>
+  <!-- WIDGET RECENT ARTICLES -->
+  <app-recent-articles></app-recent-articles>
+  <!-- WIDGET RECENT POST -->
+  <app-recommended-articles></app-recommended-articles>
+  <!-- WIDGET ADS -->
+  <app-ad-preview [adWidth]="280" [adHeight]="280"></app-ad-preview>
 </div>

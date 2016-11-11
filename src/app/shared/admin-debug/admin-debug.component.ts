@@ -1,18 +1,13 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-admin-debug',
-  templateUrl: './admin-debug.component.html',
-  styleUrls: ['./admin-debug.component.scss']
+  styleUrls: ['./admin-debug.component.scss'],
+  templateUrl: './admin-debug.component.html'
 })
 export class AdminDebugComponent implements OnInit {
-
-
-
   constructor() { }
 
   ngOnInit() {
   }
-
 }

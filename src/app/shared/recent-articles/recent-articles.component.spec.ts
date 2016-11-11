@@ -1,11 +1,9 @@
 /* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { addProviders, async, inject } from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
 import { RecentArticlesComponent } from './recent-articles.component';
 
-describe('Component: RecentArticles', () => {
+describe('Component: RecentArticlesComponent', () => {
   it('should create an instance', () => {
     let component = new RecentArticlesComponent();
     expect(component).toBeTruthy();

@@ -1,12 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BlogCategory } from '../../core/interfaces/blog-category';
 
-
 @Component({
-
   selector: 'app-article-categories',
-  templateUrl: 'article-categories.component.html',
-  styleUrls: ['article-categories.component.scss']
+  styleUrls: ['article-categories.component.scss'],
+  templateUrl: 'article-categories.component.html'
 })
 export class ArticleCategoriesComponent implements OnInit {
 

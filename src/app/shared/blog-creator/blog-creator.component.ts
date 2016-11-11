@@ -10,8 +10,8 @@ export interface BlogArticle {
 @Component({
 
   selector: 'app-blog-creator',
-  templateUrl: 'blog-creator.component.html',
-  styleUrls: ['blog-creator.component.scss']
+  styleUrls: ['blog-creator.component.scss'],
+  templateUrl: 'blog-creator.component.html'
 })
 export class BlogCreatorComponent implements OnInit {
 
@@ -22,17 +22,16 @@ export class BlogCreatorComponent implements OnInit {
   @Input() enablePreview: boolean = false;
 
   story: BlogArticle = {
-    title: '',
-    html: '',
+    author: this.authorInput,
     description: '',
-    author: this.authorInput
+    html: '',
+    title: '',
   };
 
   options = {
-    placeholder: '+ term',
-    secondaryPlaceholder: 'Enter a new term',
+    placeholder: '+ tag',
+    secondaryPlaceholder: 'Enter a new tag',
   };
-
 
   constructor() {
 
@@ -45,7 +44,6 @@ export class BlogCreatorComponent implements OnInit {
     this.tagAdded.emit(val);
   }
 
-
   addArticle() {
     this.articleSubmitted.emit(this.story);
   }
@@ -53,6 +51,4 @@ export class BlogCreatorComponent implements OnInit {
   keyupOnEditor(storyContent: string) {
     this.story.html = storyContent;
   }
-
-
 }

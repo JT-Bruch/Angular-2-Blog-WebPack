@@ -2,8 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-blog-tagger',
-  templateUrl: './blog-tagger.component.html',
-  styleUrls: ['./blog-tagger.component.scss']
+  styleUrls: ['./blog-tagger.component.scss'],
+  templateUrl: './blog-tagger.component.html'
 })
 export class BlogTaggerComponent implements OnInit {
 
@@ -12,8 +12,8 @@ export class BlogTaggerComponent implements OnInit {
   @Output() onTagRemoved = new EventEmitter<string>();
 
   options = {
-        placeholder: '+ term',
-        secondaryPlaceholder: 'Enter a new term'
+        placeholder: '+ tag',
+        secondaryPlaceholder: 'Enter a new tag'
   };
   constructor() { }
 
@@ -26,6 +26,5 @@ export class BlogTaggerComponent implements OnInit {
   tagRemoved(item) {
       console.log(`${item} has been removed :(`);
   }
-
 
 }

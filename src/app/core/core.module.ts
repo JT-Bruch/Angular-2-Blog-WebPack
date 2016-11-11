@@ -12,7 +12,6 @@ import { ContactInfoService } from './database/contact-info.service';
 import { BlogService } from './database/blog.service';
 import { BlogCategoryService } from './database/blog-category.service';
 import { ConstService } from './utility/const.service';
-import { InstagramListService } from './social/instagram-list.service';
 
 import { RandomService } from './utility/random.service';
 
@@ -36,7 +35,6 @@ import { AuthGuardService } from './auth/auth-guard.service';
       ContactInfoService,
       BlogService,
       BlogCategoryService,
-      InstagramListService,
       RandomService,
       ConstService,
       AuthGuardService,

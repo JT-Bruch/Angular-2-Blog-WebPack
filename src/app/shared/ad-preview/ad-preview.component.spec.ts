@@ -1,11 +1,9 @@
 /* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { addProviders, async, inject } from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
 import { AdPreviewComponent } from './ad-preview.component';
 
-describe('Component: AdPreview', () => {
+describe('Component: TinyMce', () => {
   it('should create an instance', () => {
     let component = new AdPreviewComponent();
     expect(component).toBeTruthy();
