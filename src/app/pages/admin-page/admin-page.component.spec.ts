@@ -1,11 +1,46 @@
 /* tslint:disable:no-unused-variable */
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { ResponseOptions, Response, XHRBackend, HttpModule, Http } from '@angular/http';
+import { MockBackend, MockConnection } from '@angular/http/testing';
 
-import { TestBed, async } from '@angular/core/testing';
+import { createTranslateLoader } from './../../app.module';
+import { TranslateModule, TranslateService, TranslateLoader } from 'ng2-translate/ng2-translate';
+
 import { AdminPageComponent } from './admin-page.component';
 
-describe('Component: MorePage', () => {
-  it('should create an instance', () => {
-    let component = new AdminPageComponent();
+describe('HighlightDirectivePageComponent', () => {
+  let component: AdminPageComponent;
+  let fixture: ComponentFixture<AdminPageComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        AdminPageComponent
+      ],
+      imports: [
+        HttpModule,
+        TranslateModule
+      ],
+      providers: [
+        TranslateService,
+        TranslateLoader
+      ],
+      schemas:      [ NO_ERRORS_SCHEMA ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AdminPageComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

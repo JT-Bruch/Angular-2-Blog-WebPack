@@ -1,13 +1,13 @@
 import { Angular2BlogPage } from './app.po';
 
-describe('angular-2-blog App', function() {
+describe('angular-2-blog App', () => {
   let page: Angular2BlogPage;
 
   beforeEach(() => {
     page = new Angular2BlogPage();
   });
 
-  it('should display message saying app works', () => {
+  xit('should display message saying app works', () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual('app works!');
   });

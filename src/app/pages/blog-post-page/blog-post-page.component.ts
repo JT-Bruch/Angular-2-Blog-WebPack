@@ -7,8 +7,8 @@ import { BlogPost, EditBlogPost } from '../../core/interfaces/blog-post';
 
 @Component({
   selector: 'app-blog-post-page',
-  templateUrl: './blog-post-page.component.html',
-  styleUrls: ['./blog-post-page.component.scss']
+  styleUrls: ['./blog-post-page.component.scss'],
+  templateUrl: './blog-post-page.component.html'
 })
 export class BlogPostPageComponent implements OnInit, AfterViewInit {
 

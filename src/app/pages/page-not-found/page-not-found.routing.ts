@@ -1,15 +1,12 @@
-import { ModuleWithProviders }   from '@angular/core';
-import { Routes, RouterModule }  from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { PageNotFoundComponent } from './page-not-found.component';
 
-
-
-
 const pageNotFoundRoutes: Routes = [
   {
-    path: '',
-    component: PageNotFoundComponent
+    component: PageNotFoundComponent,
+    path: ''
   }
 ];
 

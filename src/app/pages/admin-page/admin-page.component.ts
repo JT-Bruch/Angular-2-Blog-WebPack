@@ -5,11 +5,10 @@ import { AuthService } from './../../core/auth/auth.service';
 import { GlobalLinkService } from './../../core/database/global-link.service';
 import { SocialMediaLinks } from './../../core/interfaces/social-media-links';
 
-
 @Component({
   selector: 'app-admin-page',
-  templateUrl: './admin-page.component.html',
-  styleUrls: ['./admin-page.component.scss']
+  styleUrls: ['./admin-page.component.scss'],
+  templateUrl: './admin-page.component.html'
 })
 export class AdminPageComponent implements OnInit {
 

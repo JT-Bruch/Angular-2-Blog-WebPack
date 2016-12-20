@@ -7,8 +7,8 @@ import { AngularFire } from 'angularfire2';
 
 @Component({
   selector: 'app-more-page',
-  templateUrl: './more-page.component.html',
-  styleUrls: ['./more-page.component.scss']
+  styleUrls: ['./more-page.component.scss'],
+  templateUrl: './more-page.component.html'
 })
 export class MorePageComponent implements OnInit {
 
