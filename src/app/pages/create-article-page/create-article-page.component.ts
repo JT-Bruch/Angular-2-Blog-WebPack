@@ -13,8 +13,8 @@ import { BlogArticle } from '../../shared/blog-creator/blog-creator.component';
 
 @Component({
   selector: 'app-create-article-page',
-  templateUrl: './create-article-page.component.html',
-  styleUrls: ['./create-article-page.component.scss']
+  styleUrls: ['./create-article-page.component.scss'],
+  templateUrl: './create-article-page.component.html'
 })
 export class CreateArticlePageComponent implements OnInit, OnDestroy {
 
@@ -64,7 +64,6 @@ export class CreateArticlePageComponent implements OnInit, OnDestroy {
     this.blogService.createBlog(testPost).then((submittedArticle: firebase.database.ThenableReference) => {
       this.openBlogPage(submittedArticle.key);
     });
-
 
   }
 

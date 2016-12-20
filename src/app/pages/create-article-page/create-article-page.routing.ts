@@ -1,17 +1,14 @@
-import { ModuleWithProviders }   from '@angular/core';
-import { Routes, RouterModule }  from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { CreateArticlePageComponent } from './create-article-page.component';
 import { AuthGuardService } from './../../core/auth/auth-guard.service';
 
-
-
-
 const createArticlePageRoutes: Routes = [
   {
-    path: '',
+    canActivate: [AuthGuardService],
     component: CreateArticlePageComponent,
-    canActivate: [AuthGuardService]
+    path: ''
   }
 ];
 

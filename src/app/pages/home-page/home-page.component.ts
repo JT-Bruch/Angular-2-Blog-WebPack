@@ -1,8 +1,4 @@
-import { Component, OnInit, trigger,
-  state,
-  style,
-  transition,
-  animate } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
@@ -11,19 +7,9 @@ import { BlogService } from '../../core/database/blog.service';
 import { BlogPost } from '../../core/interfaces/blog-post';
 
 @Component({
-
   selector: 'app-home-page',
-  templateUrl: 'home-page.component.html',
   styleUrls: ['home-page.component.scss'],
-  animations: [
-    trigger('flyInOut', [
-      state('in', style({transform: 'scale(1)'})),
-      transition('void => *', [
-        style({transform: 'scale(0)'}),
-        animate(500)
-      ])
-    ])
-  ]
+  templateUrl: 'home-page.component.html'
 })
 export class HomePageComponent implements OnInit {
 

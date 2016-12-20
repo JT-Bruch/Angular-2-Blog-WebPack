@@ -1,11 +1,11 @@
 <div class="widget widget_categories">
-    <div class="widget-title">
-      <h5>{{'sidebar.categoriesTitle' | translate }}</h5>
-    </div>
-    <ul *ngFor="let cat of blogCategoryList; let i = index">
-      <li class="cat-item" (click)="categoryClicked(cat)">
-        <a>{{cat.name}} <span *ngIf="cat.blogs != null"> ({{getNumBlogs(cat)}})</span>
-        </a>
-      </li>
-    </ul>
+  <div class="widget-title">
+    <h5>{{'sidebar.categoriesTitle' | translate }}</h5>
   </div>
+  <ul *ngFor="let cat of blogCategoryList; let i = index">
+    <li class="cat-item" (click)="categoryClicked(cat)">
+      <a>{{cat.name}} <span *ngIf="cat.blogs != null"> ({{getNumBlogs(cat)}})</span>
+        </a>
+    </li>
+  </ul>
+</div>
