@@ -4,8 +4,8 @@ import { SocialMediaLinks } from '../../core/interfaces/social-media-links';
 @Component({
 
   selector: 'app-social-media-list',
-  styleUrls: ['social-media-list.component.scss'],
-  templateUrl: 'social-media-list.component.html'
+  styleUrls:['././social-media-list.component.scss'],
+  templateUrl: '././social-media-list.component.html'
 })
 export class SocialMediaListComponent implements OnInit, OnChanges {
   @Input() styleToUse: string;

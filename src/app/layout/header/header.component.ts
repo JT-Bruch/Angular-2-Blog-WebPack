@@ -7,8 +7,8 @@ import { SocialMediaLinks } from './../../core/interfaces/social-media-links';
 
 @Component({
   selector: 'app-header',
-  styleUrls: ['header.component.scss'],
-  templateUrl: 'header.component.html',
+  styleUrls:['./header.component.scss'],
+  templateUrl: './header.component.html',
 })
 
 export class HeaderComponent implements OnInit {

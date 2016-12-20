@@ -13,8 +13,8 @@ import { BlogArticle } from '../../shared/blog-creator/blog-creator.component';
 
 @Component({
   selector: 'app-create-article-page',
-  styleUrls: ['./create-article-page.component.scss'],
-  templateUrl: './create-article-page.component.html'
+  styleUrls:['././create-article-page.component.scss'],
+  templateUrl: '././create-article-page.component.html'
 })
 export class CreateArticlePageComponent implements OnInit, OnDestroy {
 

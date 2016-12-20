@@ -37,12 +37,13 @@
     "zone.js": "^0.6.26"
   },
   "devDependencies": {
+    "@angular/compiler-cli": "2.2.3",
     "@types/chance": "^0.7.31",
-    "@types/jasmine": "^2.2.30",
+    "@types/jasmine": "2.5.36",
     "@types/node": "^6.0.42",
     "@types/request": "^0.0.30",
     "angular-cli": "1.0.0-beta.22",
-    "codelyzer": "1.0.0-beta.4",
+    "codelyzer": "2.0.0-beta.1",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
     "karma": "1.2.0",

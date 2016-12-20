@@ -9,8 +9,8 @@ import {
 
 @Component({
   selector: 'app-tiny-mce',
-  styleUrls: ['./tiny-mce.component.scss'],
-  templateUrl: './tiny-mce.component.html'
+  styleUrls:['././tiny-mce.component.scss'],
+  templateUrl: '././tiny-mce.component.html'
 })
 export class TinyMceComponent implements AfterViewInit, OnDestroy {
 

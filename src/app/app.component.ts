@@ -8,8 +8,8 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/dist/providers';
 @Component({
 
   selector: 'app-root',
-  styleUrls: ['app.component.scss'],
-  templateUrl: 'app.component.html'
+  styleUrls:['./app.component.scss'],
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
 

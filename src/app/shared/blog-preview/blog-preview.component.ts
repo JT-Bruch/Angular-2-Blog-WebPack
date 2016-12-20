@@ -4,8 +4,8 @@ import { BlogPost } from '../../core/interfaces/blog-post';
 @Component({
 
   selector: 'app-blog-preview',
-  styleUrls: ['blog-preview.component.scss'],
-  templateUrl: 'blog-preview.component.html'
+  styleUrls:['././blog-preview.component.scss'],
+  templateUrl: '././blog-preview.component.html'
 })
 export class BlogPreviewComponent implements OnInit {
 

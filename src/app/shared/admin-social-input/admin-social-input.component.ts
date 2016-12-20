@@ -4,8 +4,8 @@ import { SocialMediaLinks } from './../../core/interfaces/social-media-links';
 
 @Component({
   selector: 'app-admin-social-input',
-  styleUrls: ['./admin-social-input.component.scss'],
-  templateUrl: './admin-social-input.component.html'
+  styleUrls:['././admin-social-input.component.scss'],
+  templateUrl: '././admin-social-input.component.html'
 })
 export class AdminSocialInputComponent implements OnInit, OnChanges {
 

@@ -3,8 +3,8 @@ import { BlogPost, EditBlogPost } from '../../core/interfaces/blog-post';
 
 @Component({
   selector: 'app-blog-post',
-  styleUrls: ['./blog-post.component.scss'],
-  templateUrl: './blog-post.component.html',
+  styleUrls:['././blog-post.component.scss'],
+  templateUrl: '././blog-post.component.html',
 
 })
 export class BlogPostComponent implements OnInit {

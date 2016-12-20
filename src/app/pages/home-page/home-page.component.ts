@@ -8,8 +8,8 @@ import { BlogPost } from '../../core/interfaces/blog-post';
 
 @Component({
   selector: 'app-home-page',
-  styleUrls: ['home-page.component.scss'],
-  templateUrl: 'home-page.component.html'
+  styleUrls:['./home-page.component.scss'],
+  templateUrl: './home-page.component.html'
 })
 export class HomePageComponent implements OnInit {
 

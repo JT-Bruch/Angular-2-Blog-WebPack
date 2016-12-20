@@ -7,8 +7,8 @@ import { RandomService } from '../../core/utility/random.service';
 @Component({
 
   selector: 'app-about-page',
-  styleUrls: ['about-page.component.scss'],
-  templateUrl: 'about-page.component.html'
+  styleUrls:['./about-page.component.scss'],
+  templateUrl: './about-page.component.html'
 })
 export class AboutPageComponent implements OnInit {
 

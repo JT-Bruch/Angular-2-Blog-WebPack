@@ -7,8 +7,8 @@ import { BlogCategoryService } from '../../core/database/blog-category.service';
 
 @Component({
   selector: 'app-sidebar',
-  styleUrls: ['sidebar.component.scss'],
-  templateUrl: 'sidebar.component.html'
+  styleUrls:['./sidebar.component.scss'],
+  templateUrl: './sidebar.component.html'
 })
 export class SidebarComponent implements OnInit {
 

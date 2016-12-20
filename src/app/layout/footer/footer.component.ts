@@ -9,8 +9,8 @@ import { SocialMediaLinks } from './../../core/interfaces/social-media-links';
 @Component({
 
   selector: 'app-footer',
-  styleUrls: ['footer.component.scss'],
-  templateUrl: 'footer.component.html'
+  styleUrls:['./footer.component.scss'],
+  templateUrl: './footer.component.html'
 })
 export class FooterComponent implements OnInit {
 

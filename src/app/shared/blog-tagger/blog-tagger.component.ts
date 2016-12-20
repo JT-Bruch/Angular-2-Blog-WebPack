@@ -2,8 +2,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-blog-tagger',
-  styleUrls: ['./blog-tagger.component.scss'],
-  templateUrl: './blog-tagger.component.html'
+  styleUrls:['././blog-tagger.component.scss'],
+  templateUrl: '././blog-tagger.component.html'
 })
 export class BlogTaggerComponent implements OnInit {
 
