@@ -1,0 +1,61 @@
+{
+    "appTitle": "Just A Dev Blog-UK",
+    "mainNav": {
+        "homePage": "Home-UK",
+        "aboutPage": "About-UK",
+        "forReadersPage": "For Readers-UK",
+        "morePage": "More"
+    },
+    "subNav": {
+        "contactInfo": "Contact-UK",
+        "skillsInfo": "Skill Set-UK",
+        "careerInfo": "Career History-UK",
+        "blogInfo": "Blogs-UK",
+        "faqInfo": "FAQ-UK",
+        "siteTemplateInfo": "Site Template-UK",
+        "gitHubInfo": "GitHub-UK",
+        "upcomingNewsInfo": "Upcoming News-UK",
+        "meetUpInfo": "Meet-Ups"
+    },
+    "adminPage": {
+        "title": "Administration-UK",
+        "testingTitle": "Testing Section"
+    },
+    "adminSocial": {
+        "title": "Link Social Media"
+    },
+    "sidebar": {
+        "recommendedArticleTitle": "Recommended Articles-UK",
+        "recentArticleTitle": "Recent Articles-UK",
+        "categoriesTitle": "Categories"
+    },
+    "socialMedia": {
+        "facebook": "Facebook-UK",
+        "twitter": "Twitter-UK",
+        "github": "GitHub-UK",
+        "linkedin": "LinkedIn-UK",
+        "facebookColon": "Facebook:-UK",
+        "twitterColon": "Twitter:-UK",
+        "githubColon": "GitHub:-UK",
+        "linkedinColon": "LinkedIn:"
+    },
+    "blogPreview":{
+        "viewCountLabel": "views-UK",
+        "commentsLabel" : "comments-UK",
+        "readMoreLabelUppercase" : "READ MORE-UK",
+        "byAuthorLabel": "by {{author}}"
+    },
+    "footerContactInfo": {
+        "personalSlogan": "A developers blog."
+    },
+    "footerNavBar": {
+        "homePage": "Home-UK",
+        "aboutPage": "About-UK",
+        "blogPage": "Blog-UK",
+        "contactPage": "Contact-UK",
+        "copywriteLabel": "Copyright ©"
+    },
+    "createArticle": {
+        "creatorTitle": "Create Article"
+    }
+}

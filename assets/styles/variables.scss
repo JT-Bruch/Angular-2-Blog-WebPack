@@ -1,0 +1,110 @@
+
+//FONT FAMILY
+
+$roboto_font: 'Roboto', sans-serif;
+$Merriweather_font : 'Merriweather', serif;
+$Montserrat_font : 'Montserrat', sans-serif;
+$Open_Sans_font : 'Open Sans', sans-serif;
+
+$base_font_size: 14px !default;
+$secondary_font_size: 13px !default;
+$small_font_size: 12px;
+
+$base_line_height: 24px !default;
+$secondary_line_height: 25px !default;
+
+//COLOR
+
+$primary_color: #fb0d29;
+$white_color: #fff;
+$black_color: #000;
+$lite_black: #010101;
+$blue_color: #0ec7ef;
+$yellow_color: #ff9e01;
+$gray_color: #0a0a0a;
+$deep_black: #161616;
+
+$blockquote_color: #121212;
+
+//SECTION BACKGROUND
+
+$body_bg: #f0f0f0;
+$footer_bg: #fff;
+$bg_white: #fff;
+$bg_blue: #0ec7ef;
+$bg_red:#fb0d29;
+$bg_yellow: #ff9e01;
+$transparent_bg: transparent;
+
+//SOCIAL
+
+$facebook_bg: #3b5998;
+$twitter_bg: #00aced;
+$google_plus_bg: #181818;
+$youtube_bg: #fe3232;
+
+//FONT WEIGHT
+
+$font_thin: 100;
+$font_light: 300;
+$font_normal: 400;
+$font_medium: 500;
+$font_semibold: 600;
+$font_bold: 700;
+$font_extra_bold: 900;
+
+//PADDING
+
+$section_padd: 60px 0;
+$post_block_padd: 25px;
+
+//
+// FONT PALETTE
+//
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+//
+// COLOR PALETTE
+//
+
+$white: #FFF;
+$off-gray: #f0f0f0;
+$black: #000;
+$red: #f0f0f0;
+
+$soft-red: #fb0d29;
+$accent-red: #FF5252;
+$blue-grey: #455A64;
+$light-grey:rgba(117, 117, 117, 0.35);
+
+$primary-color: $soft-red;
+$accent-color: $blue-grey;
+$warning-color: $red;
+
+//
+// FONT PALETTE
+//
+$merriweather-font: "Merriweather", sans-serif;
+$montserrat-font: "Montserrat", sans-serif;
+$open-sans-font: "Open Sans", sans-serif;
+$roboto-font: "Roboto", sans-serif;
+
+//
+// MAIN APP FONTS
+//
+$body-font: $roboto-font;
+$header-font: $roboto-font;
+$navbar-brand-font: $open-sans-font;
+$navbar-nav-font: $montserrat-font;
+
+//
+// MAIN APP COLORS
+//
+$content-background-color: $off-gray;
+$title-border-grey: $light-grey;
+
+

@@ -1,0 +1,72 @@
+{
+    "appTitle": "Just A Dev Blog",
+    "mainNav": {
+        "homePage": "Home",
+        "aboutPage": "About",
+        "forReadersPage": "For Readers",
+        "morePage": "More"
+    },
+    "subNav": {
+        "contactInfo": "Contact",
+        "skillsInfo": "Skill Set",
+        "careerInfo": "Career History",
+        "blogInfo": "Blogs",
+        "faqInfo": "FAQ",
+        "siteTemplateInfo": "Site Template",
+        "gitHubInfo": "GitHub",
+        "upcomingNewsInfo": "Upcoming News",
+        "meetUpInfo": "Meet-Ups"
+    },
+    "auth": {
+        "notLoggedIn": "Not Logged In"
+    },
+    "adminPage": {
+        "title": "Administration",
+        "testingTitle": "Testing Section"
+    },
+    "adminSocial": {
+        "title": "Link Social Media"
+    },
+    "sidebar": {
+        "recommendedArticleTitle": "Recommended Articles",
+        "recentArticleTitle": "Recent Articles",
+        "categoriesTitle": "Categories"
+    },
+    "socialMedia": {
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "facebookColon": "Facebook:",
+        "twitterColon": "Twitter:",
+        "githubColon": "GitHub:",
+        "linkedinColon": "LinkedIn:"
+    },
+    "blogPreview": {
+        "viewCountLabel": "views",
+        "commentsLabel" : "comments",
+        "readMoreLabelUppercase" : "READ MORE",
+        "byAuthorLabel": "by {{author}}"
+    },
+    "blogPost": {
+        "quickEdit": "Quick Edit",
+        "save": "Save"
+    },
+    "footerContactInfo": {
+        "personalSlogan": "A developers blog."
+    },
+    "footerNavBar": {
+        "homePage": "Home",
+        "aboutPage": "About",
+        "blogPage": "Blog",
+        "contactPage": "Contact",
+        "copywriteLabel": "Copyright ©"
+    },
+    "createArticle": {
+        "creatorTitle": "Create an Article",
+        "title": "Title",
+        "description": "Description",
+        "author": "Author",
+        "addArticle": "Publish Article"
+    }
+}
