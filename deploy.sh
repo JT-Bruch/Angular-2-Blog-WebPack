@@ -76,11 +76,9 @@ ls -als
 echo "touch all files"
 touch .
 
-if [ "$1" != true ]
-then
-  echo "make a 404"
-  cp index.html 404.html
-fi
+echo "make a 404"
+cp index.html 404.html
+echo "justadevblog.com" > CNAME
 
 echo "add all files"
 git add .
@@ -100,7 +98,7 @@ git log
 
 
 
-# echo "example.com" > CNAME
+
 
 
 
