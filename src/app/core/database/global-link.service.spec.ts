@@ -5,12 +5,12 @@ import { GlobalLinkService } from './global-link.service';
 
 describe('Service: GlobalLinkService', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [GlobalLinkService]
-    });
+    // TestBed.configureTestingModule({
+    //   providers: [GlobalLinkService]
+    // });
   });
 
-  it('should ...', inject([GlobalLinkService], (service: GlobalLinkService) => {
-    expect(service).toBeTruthy();
-  }));
+  // xit('should ...', inject([GlobalLinkService], (service: GlobalLinkService) => {
+  //   expect(service).toBeTruthy();
+  // }));
 });
