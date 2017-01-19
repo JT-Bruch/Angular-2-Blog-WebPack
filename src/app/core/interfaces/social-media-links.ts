@@ -3,7 +3,7 @@ export interface SocialMediaLinks {
   twitter: string;
   github: string;
   linkedin: string;
-  createDate?: string;
+  createDate?: {};
   $key?: string;
 }
 

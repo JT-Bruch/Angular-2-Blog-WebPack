@@ -21,7 +21,7 @@ export class GlobalLinkService {
   }
 
   addSocialMedia(val: SocialMediaLinks): void {
-    val.createDate = firebase.database.ServerValue.TIMESTAMP;
+    val.createDate = firebase.database['ServerValue']['TIMESTAMP'];
     firebase.database().ref(this.constService.socialMediaRoute).child('default').set(val);
   }
 

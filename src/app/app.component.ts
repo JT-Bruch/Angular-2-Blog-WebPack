@@ -8,7 +8,7 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/dist/providers';
 @Component({
 
   selector: 'app-root',
-  styleUrls:['./app.component.scss'],
+  styleUrls: ['./app.component.scss'],
   templateUrl: './app.component.html'
 })
 export class AppComponent {
@@ -32,7 +32,7 @@ export class AppComponent {
 
   }
 
-  private isWildcardRoute(): boolean {
+  public isWildcardRoute(): boolean {
     let bRetVal = false;
     if (this.activeRoute && this.activeRoute.path === '**') {
       bRetVal = true;

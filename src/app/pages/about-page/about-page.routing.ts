@@ -1,5 +1,5 @@
-import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AboutPageComponent } from './about-page.component';
 
@@ -10,4 +10,12 @@ const aboutPageRoutes: Routes = [
   }
 ];
 
-export const aboutPageRouting: ModuleWithProviders = RouterModule.forChild(aboutPageRoutes);
+@NgModule({
+  exports: [
+    RouterModule
+  ],
+  imports: [
+    RouterModule.forChild(aboutPageRoutes)
+  ]
+})
+export class AboutPageRoutingModule { }

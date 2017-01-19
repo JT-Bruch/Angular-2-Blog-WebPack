@@ -7,32 +7,32 @@ import { AngularFire } from 'angularfire2';
 
 @Component({
   selector: 'app-more-page',
-  styleUrls:['././more-page.component.scss'],
-  templateUrl: '././more-page.component.html'
+  styleUrls: ['./more-page.component.scss'],
+  templateUrl: './more-page.component.html'
 })
 export class MorePageComponent implements OnInit {
 
-  constructor(private authService: AuthService,
+  constructor(public authService: AuthService,
               private authGuardService: AuthGuardService,
               private translate: TranslateService,
-              private af: AngularFire) { }
+              public af: AngularFire) { }
 
-  ngOnInit() {
+  public ngOnInit() {
   }
 
-  toggleAuth() {
+  public toggleAuth() {
     this.authService.isLoggedIn = !this.authService.isLoggedIn;
   }
 
-  toggleLang(langToUse: string) {
+  public toggleLang(langToUse: string) {
     this.translate.use(langToUse);
   }
 
-  loginGitHub() {
+  public loginGitHub() {
     this.authService.loginGitHub();
   }
 
-  logoutGitHub() {
+  public logoutGitHub() {
      this.authService.logoutGitHub();
   }
 

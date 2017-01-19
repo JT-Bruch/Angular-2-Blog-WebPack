@@ -22,9 +22,7 @@ export class BlogCategoryService {
       orderByChild: 'name'
     }});
 
-    this.categoriesObj$ = af.database.object(constSvc.categoryRoute, { query: {
-      orderByChild: 'name'
-    }});
+    this.categoriesObj$ = af.database.object(constSvc.categoryRoute);
   }
 
   createBlogCategory(blogCat: BlogCategory): firebase.Promise<any> {
@@ -39,7 +37,7 @@ export class BlogCategoryService {
     let newCat: BlogCategory = {
       blogs: {
       },
-      createDate: firebase.database.ServerValue.TIMESTAMP,
+      createDate: firebase.database['ServerValue']['TIMESTAMP'],
       name: val
     };
     this.categories$.push(newCat);

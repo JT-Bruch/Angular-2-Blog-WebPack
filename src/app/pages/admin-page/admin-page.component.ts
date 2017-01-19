@@ -7,8 +7,8 @@ import { SocialMediaLinks } from './../../core/interfaces/social-media-links';
 
 @Component({
   selector: 'app-admin-page',
-  styleUrls:['././admin-page.component.scss'],
-  templateUrl: '././admin-page.component.html'
+  styleUrls: ['./admin-page.component.scss'],
+  templateUrl: './admin-page.component.html'
 })
 export class AdminPageComponent implements OnInit {
 

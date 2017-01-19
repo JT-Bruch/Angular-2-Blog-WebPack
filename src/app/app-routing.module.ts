@@ -1,5 +1,5 @@
-import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const appRoutes: Routes = [
   {
@@ -10,6 +10,10 @@ const appRoutes: Routes = [
   {
     loadChildren: 'app/pages/about-page/about-page.module#AboutPageModule',
     path: 'about'
+  },
+  {
+    loadChildren: 'app/pages/home-page/home-page.module#HomePageModule',
+    path: 'home'
   },
   {
     loadChildren: 'app/pages/admin-page/admin-page.module#AdminPageModule',
@@ -38,11 +42,15 @@ const appRoutes: Routes = [
   {
     loadChildren: 'app/pages/for-readers-page/for-readers-page.module#ForReadersPageModule',
     path: 'readers'
-  },
-  {
-    loadChildren: 'app/pages/page-not-found/page-not-found.module#PageNotFoundModule',
-    path: '**'
-  },
+  }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+@NgModule({
+  exports: [
+    RouterModule
+  ],
+  imports: [
+    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules })
+  ]
+})
+export class AppRoutingModule { }

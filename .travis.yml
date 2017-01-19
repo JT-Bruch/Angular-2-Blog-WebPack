@@ -28,5 +28,8 @@ before_script:
 
 script: ng e2e
 
+after_success:
+- bash deploy.sh
+
 notifications:
   email: false

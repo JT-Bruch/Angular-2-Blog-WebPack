@@ -7,7 +7,7 @@ import { SocialMediaLinks } from './../../core/interfaces/social-media-links';
 
 @Component({
   selector: 'app-header',
-  styleUrls:['./header.component.scss'],
+  styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
 
