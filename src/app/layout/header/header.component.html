@@ -23,10 +23,11 @@
 
         <div class="collapse navbar-collapse" [collapse]="isCollapsed" (collapsed)="collapsed($event)" (expanded)="expanded($event)">
           <ul class="nav navbar-nav navbar-right">
-            <li routerLink="home" routerLinkActive="active"><a>{{'mainNav.homePage' | translate }}</a></li>
-            <li routerLink="about" routerLinkActive="active"><a>{{'mainNav.aboutPage' | translate }}</a></li>
-            <li routerLink="readers" routerLinkActive="active"><a>{{'mainNav.forReadersPage' | translate }}</a></li>
-            <li routerLink="more" routerLinkActive="active"><a>{{'mainNav.morePage' | translate }}</a></li>
+            <li routerLink="home" routerLinkActive="active"><a>{{'homePage.title' | translate }}</a></li>
+            <li routerLink="about" routerLinkActive="active"><a>{{'aboutPage.title' | translate }}</a></li>
+            <li routerLink="readers" routerLinkActive="active"><a>{{'forReadersPage.title' | translate }}</a></li>
+            <li *ngIf="!authService.isLoggedIn" routerLink="auth/login" routerLinkActive="active"><a>{{'loginPage.title' | translate }}</a></li>
+            <li *ngIf="authService.isLoggedIn" (click)="authService.logout()"><a>{{'common.logout' | translate }}</a></li>
           </ul>
         </div>
 

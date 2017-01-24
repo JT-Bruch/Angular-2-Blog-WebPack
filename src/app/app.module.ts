@@ -10,6 +10,7 @@ import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig as FireBaseConfig,
          firebaseAuthConfig as FirebaseAuthConfig } from '../environments/firebase';
 import { MaterialModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { CollapseModule } from 'ng2-bootstrap';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
@@ -49,7 +50,6 @@ export function createTranslateLoader(http: Http, pl: PlatformLocation) {
     HeaderComponent,
     FooterComponent,
     SidebarComponent
-
   ],
   imports: [
     BrowserModule,
@@ -64,6 +64,7 @@ export function createTranslateLoader(http: Http, pl: PlatformLocation) {
         }),
     AngularFireModule.initializeApp(FireBaseConfig, FirebaseAuthConfig),
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
+    FlexLayoutModule.forRoot(),
     CoreModule,
     SharedModule,
     CollapseModule

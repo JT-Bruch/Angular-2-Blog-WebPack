@@ -25,8 +25,8 @@ then
   echo "${Array[0]}"
   echo "${Array[1]}"
   shopt -s extglob
-  echo "ng build --base-href=\"/${Array[1]}/"
-  ng build --prod
+  echo "ng build --prod --aot"
+  ng build --prod --aot
 fi
 
 echo "set remote"

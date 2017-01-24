@@ -33,7 +33,7 @@ const appRoutes: Routes = [
   },
   {
     loadChildren: 'app/pages/auth-page/auth-page.module#AuthPageModule',
-    path: 'login'
+    path: 'auth'
   },
   {
     loadChildren: 'app/pages/more-page/more-page.module#MorePageModule',
