@@ -14,19 +14,10 @@ import { SocialMediaLinks } from './../../core/interfaces/social-media-links';
 })
 export class FooterComponent implements OnInit {
 
-  copywriteYear: string = this.linkService.copywriteYear;
-  primaryTelephoneAddress: string = this.infoService.primaryCellPhone;
-  primaryEmailAddress: string = this.infoService.primaryEmailAddress;
-  socialMedia: Observable<SocialMediaLinks>;
-
-  socialMediaStyle: string = 'footer-style';
-
-  constructor(private infoService: ContactInfoService,
-              private authService: AuthGuardService,
-              private linkService: GlobalLinkService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.socialMedia = this.linkService.socialMedia$;
+
   }
 
 }
