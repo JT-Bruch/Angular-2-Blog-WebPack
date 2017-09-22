@@ -1,0 +1,18 @@
+<div class="widget">
+  <div class="widget-title">
+    <h5>{{'loginPage.title' | translate }}</h5>
+  </div>
+  <div class="flex-container" fxLayout="row" fxLayout="center center">
+    <div fxFlex fxFill>{{'loginPage.thirdParty' | translate }}
+      <div class="flex-container" fxLayout="row" fxLayout="center center">
+        <div fxFlex>
+          <button md-raised-button color="primary" (click)="loginGitHub()">{{'loginPage.github' | translate }}</button>
+        </div>
+        <div fxFlex>
+          <button md-raised-button color="primary" (click)="loginGoogle()">{{'loginPage.google' | translate }}</button>
+        </div>
+      </div>
+    </div>
+    <div fxFlex fxFill>{{'loginPage.regularLogin' | translate }}</div>
+  </div>
+</div>

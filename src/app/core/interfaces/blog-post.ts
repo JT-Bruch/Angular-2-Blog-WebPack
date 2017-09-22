@@ -3,7 +3,7 @@ export interface BlogPost {
   imageUrl: string;
   author: string;
   modDate: string;
-  createDate: string;
+  createDate: {};
   displayOrder: number;
   viewCount: number;
   title: string;
@@ -18,7 +18,6 @@ export interface BlogPost {
 }
 
 export interface EditBlogPost {
-  $key?: string;
   title: string;
   articleContent: string;
 }

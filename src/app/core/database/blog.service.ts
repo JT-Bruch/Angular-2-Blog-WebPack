@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
-import { BlogPost } from '../interfaces/blog-post';
+import { BlogPost, EditBlogPost } from '../interfaces/blog-post';
 import { ConstService } from '../utility/const.service';
 import { RandomService } from '../utility/random.service';
 
@@ -25,10 +25,7 @@ export class BlogService {
       orderByChild: 'displayOrder'
     }});
 
-    this.blogsObj$ = af.database.object(this.constService.blogRoute, { query: {
-      limitToFirst: constService.maxBlogPosts,
-      orderByChild: 'displayOrder'
-    }});
+    this.blogsObj$ = af.database.object(this.constService.blogRoute);
 
   }
 
@@ -41,8 +38,8 @@ export class BlogService {
     return this.blogs$.remove(blog.$key);
   }
 
-  updateBlog(blog: BlogPost, changes: BlogPost): firebase.Promise<any> {
-    return this.blogs$.update(blog.$key, changes);
+  updateBlog(key: string, changes: EditBlogPost): firebase.Promise<void> {
+    return this.af.database.object(this.constService.blogRoute + key).update(changes);
   }
 
   getBlog(id: string): FirebaseObjectObservable<BlogPost> {
@@ -71,7 +68,7 @@ export class BlogService {
         author: this.randomService.getRandomName(),
         categories: {},
         commentCount: this.randomService.getRandomInt(1, 20),
-        createDate: firebase.database.ServerValue.TIMESTAMP,
+        createDate: firebase.database['ServerValue']['TIMESTAMP'],
         description: this.randomService.getRandomParagraph(),
         displayOrder: this.randomService.getRandomInt(1, 10),
         imageUrl: this.randomService.getRandomPhoto(720, 240),

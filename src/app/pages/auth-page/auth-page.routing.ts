@@ -1,15 +1,33 @@
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthPageComponent } from './auth-page.component';
-import { AuthGuardService } from './../../core/auth/auth-guard.service';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 const authPageRoutes: Routes = [
   {
-    canActivate: [AuthGuardService],
+    children: [
+      {
+        component: LoginComponent,
+        path: 'login'
+      },
+      {
+        component: SignupComponent,
+        path: 'signup'
+      }
+    ],
     component: AuthPageComponent,
-    path: ''
+    path: '',
   }
 ];
 
-export const authPageRouting: ModuleWithProviders = RouterModule.forChild(authPageRoutes);
+@NgModule({
+  exports: [
+    RouterModule
+  ],
+  imports: [
+    RouterModule.forChild(authPageRoutes)
+  ]
+})
+export class AuthPageRoutingModule { }

@@ -13,29 +13,29 @@ import { BlogArticle } from '../../shared/blog-creator/blog-creator.component';
 
 @Component({
   selector: 'app-create-article-page',
-  styleUrls:['././create-article-page.component.scss'],
-  templateUrl: '././create-article-page.component.html'
+  styleUrls: ['./create-article-page.component.scss'],
+  templateUrl: './create-article-page.component.html'
 })
 export class CreateArticlePageComponent implements OnInit, OnDestroy {
 
-  blogCatSubscription: Subscription;
-  autoCompleteTagList: string[] = [];
+  public blogCatSubscription: Subscription;
+  public autoCompleteTagList: string[] = [];
 
-  constructor(private blogService: BlogService,
-              private blogCategoryService: BlogCategoryService,
-              private randomService: RandomService,
-              private router: Router,
-              private authService: AuthService) { }
+  constructor(public blogService: BlogService,
+              public blogCategoryService: BlogCategoryService,
+              public randomService: RandomService,
+              public router: Router,
+              public authService: AuthService) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.loadAutoCompleteTagList();
   }
 
-  ngOnDestroy() {
+  public ngOnDestroy() {
     this.blogCatSubscription.unsubscribe();
   }
 
-  loadAutoCompleteTagList(): void {
+  public loadAutoCompleteTagList(): void {
 
     this.blogCatSubscription = this.blogCategoryService.getCategorySnapshot().subscribe(
       snapshots => {
@@ -53,7 +53,7 @@ export class CreateArticlePageComponent implements OnInit, OnDestroy {
     );
   }
 
-  addStory(article: BlogArticle): void {
+  public addStory(article: BlogArticle): void {
 
     let testPost: BlogPost = this.blogService.createFakeBlogPost();
     testPost.title = article.title;
@@ -67,11 +67,11 @@ export class CreateArticlePageComponent implements OnInit, OnDestroy {
 
   }
 
-  openBlogPage(blogKey: string) {
+  public openBlogPage(blogKey: string) {
     this.router.navigate(['/blogpost', blogKey]);
   }
 
-  tagAdded(val: string): void {
+  public tagAdded(val: string): void {
 
     if (this.autoCompleteTagList.indexOf(val) === -1) {
       console.log(val);

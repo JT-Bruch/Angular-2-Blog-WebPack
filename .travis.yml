@@ -3,7 +3,11 @@ dist: trusty
 language: node_js
 node_js:
   - '6'
-
+cache:
+  bundler: true
+  directories:
+  - node_modules
+  - $(npm config get prefix)
 addons:
 apt:
   sources:
@@ -18,15 +22,15 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 before_script:
-- npm install -g angular-cli
-- npm install -g karma
-- npm install
-- ng lint
-- ng test --single-run
-- ng serve --prod &
-- sleep 25
+  - npm install -g angular-cli
+  - npm install -g karma
+  - npm install
+  - npm run pree2e
+  - ng lint
+  - ng test --single-run
 
-script: ng e2e
+script:
+  - ng build --prod
 
-notifications:
-  email: false
+after_success:
+- bash deploy.sh

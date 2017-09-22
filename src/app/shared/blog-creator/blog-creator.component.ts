@@ -10,7 +10,7 @@ export interface BlogArticle {
 @Component({
 
   selector: 'app-blog-creator',
-  styleUrls:['./blog-creator.component.scss'],
+  styleUrls: ['./blog-creator.component.scss'],
   templateUrl: './blog-creator.component.html'
 })
 export class BlogCreatorComponent implements OnInit {
